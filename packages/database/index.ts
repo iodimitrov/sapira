@@ -1,3 +1,4 @@
+export * from './entities';
 import getConfig from './orm.config';
 import datasource from './datasource.config';
 
