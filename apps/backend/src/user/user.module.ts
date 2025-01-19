@@ -18,6 +18,8 @@ import { TeacherService } from './services/teacher.service';
 import { StudentService } from './services/student.service';
 import { ParentService } from './services/parent.service';
 import { TeacherResolver } from './resolvers/teacher.resolver';
+import { ParentResolver } from './resolvers/parent.resolver';
+import { StudentResolver } from './resolvers/student.resolver';
 
 @Module({
   imports: [
@@ -38,6 +40,8 @@ import { TeacherResolver } from './resolvers/teacher.resolver';
   providers: [
     TeacherResolver,
     UserResolver,
+    ParentResolver,
+    StudentResolver,
     UserService,
     AuthService,
     TeacherService,

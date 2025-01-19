@@ -4,18 +4,40 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   Institution as InstitutionEntity,
   Class as ClassEntity,
+  StudentGrade as StudentGradeEntity,
+  Subject as SubjectEntity,
 } from '@sapira/database';
 import { DateScalar } from '@sapira/nest-common';
 import { ClassService } from './services/class.service';
 import { UserModule } from '../user/user.module';
 import { ClassResolver } from './resolvers/class.resolver';
+import { GradeResolver } from './resolvers/grade.resolver';
+import { SubjectResolver } from './resolvers/subject.resolver';
+import { SubjectService } from './services/subject.service';
+import { InstitutionResolver } from './resolvers/institution.resolver';
+import { GradeService } from './services/grade.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([InstitutionEntity, ClassEntity]),
+    TypeOrmModule.forFeature([
+      InstitutionEntity,
+      ClassEntity,
+      StudentGradeEntity,
+      SubjectEntity,
+    ]),
     forwardRef(() => UserModule),
   ],
-  providers: [ClassResolver, InstitutionService, ClassService, DateScalar],
-  exports: [InstitutionService, ClassService],
+  providers: [
+    GradeResolver,
+    SubjectResolver,
+    ClassResolver,
+    InstitutionResolver,
+    InstitutionService,
+    ClassService,
+    SubjectService,
+    GradeService,
+    DateScalar,
+  ],
+  exports: [InstitutionService, ClassService, SubjectService, GradeService],
 })
 export class InstitutionModule {}
