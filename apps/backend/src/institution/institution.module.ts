@@ -6,6 +6,7 @@ import {
   Class as ClassEntity,
   StudentGrade as StudentGradeEntity,
   Subject as SubjectEntity,
+  Schedule as ScheduleEntity,
 } from '@sapira/database';
 import { DateScalar } from '@sapira/nest-common';
 import { ClassService } from './services/class.service';
@@ -26,6 +27,7 @@ import { ScheduleResolver } from './resolvers/schedule.resolver';
       ClassEntity,
       StudentGradeEntity,
       SubjectEntity,
+      ScheduleEntity,
     ]),
     forwardRef(() => UserModule),
   ],
