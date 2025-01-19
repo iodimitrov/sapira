@@ -13,5 +13,5 @@ export class UpdateStudentDossierInput {
   message?: string;
 
   @Field(() => [GraphQLUpload], { nullable: true })
-  files?: Promise<FileUpload[]>;
+  files?: Promise<FileUpload>[];
 }
