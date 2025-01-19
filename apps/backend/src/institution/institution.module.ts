@@ -16,6 +16,8 @@ import { SubjectResolver } from './resolvers/subject.resolver';
 import { SubjectService } from './services/subject.service';
 import { InstitutionResolver } from './resolvers/institution.resolver';
 import { GradeService } from './services/grade.service';
+import { ScheduleService } from './services/schedule.service';
+import { ScheduleResolver } from './resolvers/schedule.resolver';
 
 @Module({
   imports: [
@@ -28,6 +30,7 @@ import { GradeService } from './services/grade.service';
     forwardRef(() => UserModule),
   ],
   providers: [
+    ScheduleResolver,
     GradeResolver,
     SubjectResolver,
     ClassResolver,
@@ -36,8 +39,15 @@ import { GradeService } from './services/grade.service';
     ClassService,
     SubjectService,
     GradeService,
+    ScheduleService,
     DateScalar,
   ],
-  exports: [InstitutionService, ClassService, SubjectService, GradeService],
+  exports: [
+    InstitutionService,
+    ClassService,
+    SubjectService,
+    GradeService,
+    ScheduleService,
+  ],
 })
 export class InstitutionModule {}
