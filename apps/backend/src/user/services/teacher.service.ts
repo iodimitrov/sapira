@@ -75,7 +75,7 @@ export class TeacherService {
   ): Promise<TeacherEntity[]> {
     const classTeachersIds = (await this.classService.findAll(currUser))
       .filter((currClass) => currClass.teacher)
-      .map((currClass) => currClass.teacher.id);
+      .map((currClass) => currClass.teacher?.id);
     const includedClass = id ? await this.classService.findOne(id) : null;
     const usersIds = (await this.userService.findAll(currUser)).map(
       (user: UserEntity) => user.id,
