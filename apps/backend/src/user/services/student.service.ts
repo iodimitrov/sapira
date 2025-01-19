@@ -9,13 +9,24 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
 import { ClassService } from '../../institution/services/class.service';
-import { Student as StudentEntity, User as UserEntity } from '@sapira/database';
+import {
+  Student as StudentEntity,
+  User as UserEntity,
+  UserRole,
+} from '@sapira/database';
+import { GetStudentTokenPayload } from '../payloads/get-student-token.payload';
+import { StudentPayload } from '../payloads/student.payload';
+import { UpdateStudentRecordInput } from '../inputs/update-student-record.input';
+import { UserService } from './user.service';
+import { UpdateStudentInput } from '../inputs/update-student.input';
 
 @Injectable()
 export class StudentService {
   constructor(
     @Inject(forwardRef(() => ClassService))
     private readonly classService: ClassService,
+    @Inject(forwardRef(() => UserService))
+    private readonly userService: UserService,
     @InjectRepository(StudentEntity)
     private readonly studentRepository: Repository<StudentEntity>,
   ) {}
@@ -54,6 +65,20 @@ export class StudentService {
     }
   }
 
+  async findOne(id: string): Promise<StudentEntity> {
+    const student = await this.studentRepository.findOne({
+      where: { id },
+    });
+
+    if (!student) {
+      throw new NotFoundException(id);
+    }
+
+    // TODO: get student dossier files
+
+    return student;
+  }
+
   async findOneByUserId(id: string): Promise<StudentEntity> {
     const student = (await this.studentRepository.find()).find(
       (student) => student.user.id === id,
@@ -72,5 +97,70 @@ export class StudentService {
         id: In(ids),
       },
     });
+  }
+
+  async getToken(currUser: UserEntity): Promise<GetStudentTokenPayload> {
+    const token = (
+      await this.studentRepository.findOne({
+        where: { user: await this.userService.findOne(currUser.id) },
+      })
+    )?.token;
+
+    if (!token) {
+      throw new NotFoundException('[Get-Token]: No Student Token was Found');
+    }
+
+    return new GetStudentTokenPayload(token);
+  }
+
+  async update(input: UpdateStudentInput): Promise<StudentPayload> {
+    const { id, ...data } = input;
+    try {
+      if (data.classId) {
+        const { classId, ...info } = data;
+        await this.studentRepository.update(id, {
+          ...info,
+          class: await this.classService.findOne(classId),
+        });
+      } else {
+        await this.studentRepository.update(id, data);
+      }
+
+      return new StudentPayload(id);
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
+  }
+  async updateRecord(input: UpdateStudentRecordInput): Promise<StudentPayload> {
+    const student = await this.studentRepository.findOne({
+      where: { id: input.id },
+    });
+
+    if (!student) {
+      throw new NotFoundException('[UpdateRecord-Student]: No student Found');
+    }
+
+    if (input.recordMessage) {
+      student.recordMessage = input.recordMessage;
+    }
+
+    this.studentRepository.save(student);
+    return new StudentPayload(student.id);
+  }
+
+  async findAll(currUser: UserEntity): Promise<StudentEntity[]> {
+    const user = await this.userService.findOne(currUser.id);
+    const students = await this.studentRepository.find();
+
+    if (user.role === UserRole.ADMIN) {
+      return students.filter(
+        (student) => student.user.institution.id === user.institution.id,
+      );
+    }
+    const usersIds = (await this.userService.findAll(currUser)).map(
+      (user: UserEntity) => user?.id,
+    );
+
+    return students.filter((student) => usersIds.includes(student?.user?.id));
   }
 }
