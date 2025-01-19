@@ -10,6 +10,13 @@ async function bootstrap() {
   });
 
   const configService = app.get(ConfigService);
+  const frontendUrl = configService.getOrThrow<string>('FRONTEND_URL');
+
+  app.enableCors({
+    origin: frontendUrl,
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  });
 
   const cookieSecret = configService.getOrThrow<string>('COOKIE_SECRET');
   app.use(cookieParser([cookieSecret]));
