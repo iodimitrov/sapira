@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { AddUserInput } from '../inputs/add-user.input';
 import { GenerateUserTokenInput } from '../inputs/generate-user-token.input';
 import { UpdateUserStatusInput } from '../inputs/update-user-status.input';
@@ -171,6 +171,14 @@ export class UserService {
 
     return this.userRepository.find({
       where: { institution: institution },
+    });
+  }
+
+  async findAllByIds(ids: string[]): Promise<UserEntity[]> {
+    return this.userRepository.find({
+      where: {
+        id: In(ids),
+      },
     });
   }
 
