@@ -8,13 +8,14 @@ import {
 import { DateScalar } from '@sapira/nest-common';
 import { ClassService } from './services/class.service';
 import { UserModule } from '../user/user.module';
+import { ClassResolver } from './resolvers/class.resolver';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([InstitutionEntity, ClassEntity]),
     forwardRef(() => UserModule),
   ],
-  providers: [InstitutionService, ClassService, DateScalar],
+  providers: [ClassResolver, InstitutionService, ClassService, DateScalar],
   exports: [InstitutionService, ClassService],
 })
 export class InstitutionModule {}
