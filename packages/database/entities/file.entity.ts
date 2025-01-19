@@ -28,21 +28,21 @@ export class File {
   @Column('text')
   cloudFilename: string;
 
-  publicUrl: string | null;
+  publicUrl?: string | null;
 
   @ManyToOne(() => Message, (message) => message.files, {
     nullable: true,
     onDelete: 'CASCADE',
   })
-  message: Message | null;
+  message?: Message | null;
 
   @ManyToMany(() => Student, (student) => student.recordFiles, {
     nullable: true,
   })
-  studentRecords: Student[] | null;
+  studentRecords?: Student[] | null;
 
   @ManyToMany(() => StudentDossier, (studentDossier) => studentDossier.files, {
     nullable: true,
   })
-  studentDossiers: StudentDossier[] | null;
+  studentDossiers?: StudentDossier[] | null;
 }

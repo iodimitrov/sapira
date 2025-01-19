@@ -48,7 +48,7 @@ export class Class {
 
   @OneToOne(() => Teacher, { eager: true, nullable: true })
   @JoinColumn()
-  teacher: Teacher | null;
+  teacher?: Teacher | null;
 
   @Column('text')
   letter: string;

@@ -52,7 +52,7 @@ export class Subject {
       referencedColumnName: 'id',
     },
   })
-  teachers: Teacher[] | null;
+  teachers?: Teacher[] | null;
 
   @OneToMany(() => Schedule, (schedule) => schedule.subject)
   schedules: Schedule[];
@@ -61,11 +61,11 @@ export class Subject {
   class: Class;
 
   @ManyToOne(() => Message, (message) => message.subject, { nullable: true })
-  messages: Message[] | null;
+  messages?: Message[] | null;
 
   @OneToMany(() => StudentDossier, (dossier) => dossier.subject)
   studentDossiers: StudentDossier[];
 
   @OneToMany(() => StudentGrade, (grade) => grade.subject, { nullable: true })
-  grades: StudentGrade[] | null;
+  grades?: StudentGrade[] | null;
 }

@@ -26,7 +26,7 @@ export class Student {
   user: User;
 
   @Column('timestamp', { nullable: true })
-  startDate: Date | null;
+  startDate?: Date | null;
 
   @ManyToOne(() => Class, { eager: true })
   class: Class;
@@ -38,10 +38,10 @@ export class Student {
   token: string;
 
   @ManyToMany(() => Parent, (parent) => parent.students, { nullable: true })
-  parents: Parent[] | null;
+  parents?: Parent[] | null;
 
   @Column('text', { nullable: true })
-  recordMessage: string | null;
+  recordMessage?: string | null;
 
   @ManyToMany(() => File, (fil) => fil.studentRecords, {
     eager: true,
@@ -59,15 +59,15 @@ export class Student {
       referencedColumnName: 'id',
     },
   })
-  recordFiles: File[] | null;
+  recordFiles?: File[] | null;
 
   @OneToMany(() => StudentDossier, (dossier) => dossier.student, {
     eager: true,
     nullable: true,
     cascade: true,
   })
-  dossier: StudentDossier[] | null;
+  dossier?: StudentDossier[] | null;
 
   @OneToMany(() => StudentGrade, (grade) => grade.student, { nullable: true })
-  grades: StudentGrade[] | null;
+  grades?: StudentGrade[] | null;
 }

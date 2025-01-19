@@ -65,7 +65,7 @@ export class User {
   role: UserRole;
 
   @Column('text', { nullable: true })
-  registerToken: string | null;
+  registerToken?: string | null;
 
   @Column({
     type: 'enum',
@@ -90,11 +90,11 @@ export class User {
     nullable: true,
     cascade: true,
   })
-  studentDossiers: StudentDossier[] | null;
+  studentDossiers?: StudentDossier[] | null;
 
   @OneToMany(() => StudentGrade, (grade) => grade.fromUser, {
     nullable: true,
     cascade: true,
   })
-  studentGrades: StudentGrade[] | null;
+  studentGrades?: StudentGrade[] | null;
 }

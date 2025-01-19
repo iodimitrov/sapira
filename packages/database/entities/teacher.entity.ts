@@ -25,26 +25,26 @@ export class Teacher {
   user: User;
 
   @Column('text', { nullable: true })
-  education: string | null;
+  education?: string | null;
 
   @Column('smallint', { nullable: true })
-  yearsExperience: number | null;
+  yearsExperience?: number | null;
 
   @Column({
     type: 'enum',
     enum: ContractType,
     nullable: true,
   })
-  contractType: ContractType | null;
+  contractType?: ContractType | null;
 
   @Column('text', { default: '' })
   token: string;
 
   @ManyToMany(() => Subject, (subject) => subject.teachers, { nullable: true })
-  subjects: Subject[] | null;
+  subjects?: Subject[] | null;
 
   @ManyToMany(() => Schedule, (schedule) => schedule.teachers, {
     nullable: true,
   })
-  schedules: Schedule[] | null;
+  schedules?: Schedule[] | null;
 }
