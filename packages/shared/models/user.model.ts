@@ -43,7 +43,7 @@ export class User implements UserEntity {
   role: UserRole;
 
   @Field({ nullable: true })
-  registerToken?: string;
+  registerToken?: string | null;
 
   @Field(() => UserStatus)
   status: UserStatus;
@@ -58,8 +58,8 @@ export class User implements UserEntity {
   receivedMessages: Message[];
 
   @Field(() => [StudentDossier], { nullable: true })
-  studentDossiers: StudentDossier[];
+  studentDossiers?: StudentDossier[] | null;
 
   @Field(() => [StudentGrade], { nullable: true })
-  studentGrades: StudentGrade[];
+  studentGrades?: StudentGrade[] | null;
 }

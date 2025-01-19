@@ -15,7 +15,7 @@ export class Student implements StudentEntity {
   user: User;
 
   @Field(() => Date, { nullable: true })
-  startDate?: Date;
+  startDate?: Date | null;
 
   @Field(() => Class)
   class: Class;
@@ -27,17 +27,17 @@ export class Student implements StudentEntity {
   token: string;
 
   @Field(() => [Parent], { nullable: true })
-  parents?: Parent[];
+  parents?: Parent[] | null;
 
   @Field({ nullable: true })
-  recordMessage?: string;
+  recordMessage?: string | null;
 
   @Field(() => [File], { nullable: true })
-  recordFiles?: File[];
+  recordFiles?: File[] | null;
 
   @Field(() => [StudentDossier], { nullable: true })
-  dossier: StudentDossier[];
+  dossier?: StudentDossier[] | null;
 
-  @Field(() => [StudentGrade])
-  grades: StudentGrade[];
+  @Field(() => [StudentGrade], { nullable: true })
+  grades?: StudentGrade[] | null;
 }

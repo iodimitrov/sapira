@@ -25,8 +25,8 @@ export class StudentDossier implements StudentDossierEntity {
   student: Student;
 
   @Field(() => [File], { nullable: true })
-  files?: File[];
+  files?: File[] | null;
 
   @Field(() => Subject, { nullable: true })
-  subject?: Subject;
+  subject?: Subject | null;
 }

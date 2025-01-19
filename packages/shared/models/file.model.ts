@@ -21,14 +21,14 @@ export class File implements FileEntity {
   cloudFilename: string;
 
   @Field({ nullable: true })
-  publicUrl?: string;
+  publicUrl?: string | null;
 
   @Field(() => Message)
-  message?: Message;
+  message?: Message | null;
 
   @Field(() => [Student])
-  studentRecords?: Student[];
+  studentRecords?: Student[] | null;
 
   @Field(() => [StudentDossier])
-  studentDossiers?: StudentDossier[];
+  studentDossiers?: StudentDossier[] | null;
 }

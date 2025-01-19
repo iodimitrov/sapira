@@ -42,11 +42,11 @@ export class Institution implements InstitutionEntity {
   alias: string;
 
   @Field(() => [User], { nullable: true })
-  users?: User[];
+  users?: User[] | null;
 
   @Field(() => [Subject], { nullable: true })
-  subjects: Subject[];
+  subjects?: Subject[] | null;
 
-  @Field(() => [Schedule])
-  schedules: Schedule[];
+  @Field(() => [Schedule], { nullable: true })
+  schedules?: Schedule[] | null;
 }

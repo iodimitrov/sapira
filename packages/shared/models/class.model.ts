@@ -33,7 +33,7 @@ export class Class implements ClassEntity {
   totalStudentCount: number;
 
   @Field(() => Teacher, { nullable: true })
-  teacher: Teacher;
+  teacher?: Teacher | null;
 
   @Field()
   letter: string;
@@ -50,7 +50,7 @@ export class Class implements ClassEntity {
   @Field(() => [Schedule])
   schedules: Schedule[];
 
-  @Field(() => [Subject], { nullable: true })
+  @Field(() => [Subject])
   subjects: Subject[];
 
   @Field(() => [Message])

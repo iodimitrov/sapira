@@ -16,20 +16,20 @@ export class Teacher implements TeacherEntity {
   user: User;
 
   @Field({ nullable: true })
-  education?: string;
+  education?: string | null;
 
   @Field(() => Int, { nullable: true })
-  yearsExperience?: number;
+  yearsExperience?: number | null;
 
   @Field(() => ContractType, { nullable: true })
-  contractType?: ContractType;
+  contractType?: ContractType | null;
 
   @Field()
   token: string;
 
   @Field(() => [Subject], { nullable: true })
-  subjects?: Subject[];
+  subjects?: Subject[] | null;
 
   @Field(() => [Schedule], { nullable: true })
-  schedules?: Schedule[];
+  schedules?: Schedule[] | null;
 }

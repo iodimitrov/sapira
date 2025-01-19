@@ -36,19 +36,19 @@ export class Message implements MessageEntity {
   fromUser: User;
 
   @Field(() => [User])
-  toUsers: User[];
+  toUsers?: User[] | null;
 
   @Field(() => [Class])
-  toClasses: Class[];
+  toClasses?: Class[] | null;
 
   @Field(() => AssignmentType, { nullable: true })
-  assignmentType?: AssignmentType;
+  assignmentType?: AssignmentType | null;
 
   @Field({ nullable: true })
-  data?: string;
+  data?: string | null;
 
   @Field(() => [File], { nullable: true })
-  files?: File[];
+  files?: File[] | null;
 
   @Field(() => MessageType)
   messageType: MessageType;
@@ -57,8 +57,8 @@ export class Message implements MessageEntity {
   status: MessageStatus;
 
   @Field(() => Subject, { nullable: true })
-  subject?: Subject;
+  subject?: Subject | null;
 
   @Field({ nullable: true })
-  assignmentDueDate?: Date;
+  assignmentDueDate?: Date | null;
 }

@@ -28,7 +28,7 @@ export class Subject implements SubjectEntity {
   institution: Institution;
 
   @Field(() => [Teacher], { nullable: true })
-  teachers?: Teacher[];
+  teachers?: Teacher[] | null;
 
   @Field(() => [Schedule])
   schedules: Schedule[];
@@ -37,11 +37,11 @@ export class Subject implements SubjectEntity {
   class: Class;
 
   @Field(() => Message, { nullable: true })
-  messages?: Message[];
+  messages?: Message[] | null;
 
   @Field(() => [StudentDossier])
   studentDossiers: StudentDossier[];
 
-  @Field(() => [StudentGrade])
-  grades: StudentGrade[];
+  @Field(() => [StudentGrade], { nullable: true })
+  grades?: StudentGrade[] | null;
 }

@@ -29,7 +29,7 @@ export class Schedule implements ScheduleEntity {
   class: Class;
 
   @Field(() => [Teacher], { nullable: true })
-  teachers?: Teacher[];
+  teachers?: Teacher[] | null;
 
   @Field(() => Institution)
   institution: Institution;
