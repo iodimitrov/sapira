@@ -25,6 +25,7 @@ import { UpdateMessageInput } from '../inputs/update-message.input';
 import { MessagesByCriteriaInput } from '../inputs/messages-by-criteria.input';
 import { R2Service } from '@sapira/nest-common';
 import { ConfigService } from '@nestjs/config';
+import { MailerService } from '@nestjs-modules/mailer';
 
 @Injectable()
 export class MessageService {
@@ -35,7 +36,7 @@ export class MessageService {
     private readonly subjectService: SubjectService,
     private readonly r2Service: R2Service,
     private readonly configService: ConfigService,
-    // private readonly mailerService: MailerService,
+    private readonly mailerService: MailerService,
 
     @InjectRepository(MessageEntity)
     private readonly messageRepository: Repository<MessageEntity>,
@@ -104,7 +105,22 @@ export class MessageService {
     try {
       const message = await this.messageRepository.save(newMessage);
 
-      //TODO: integrate mailer service
+      const sentFrom =
+        this.configService.getOrThrow<string>('SMTP_DEFAULT_FROM');
+
+      await this.mailerService.sendMail({
+        bcc: userEmails,
+        from: `${newMessage.fromUser.firstName} ${newMessage.fromUser.lastName} [Sapira] <${sentFrom}>`,
+        subject:
+          newMessage.messageType === MessageType.MESSAGE
+            ? 'Ново съобщение'
+            : 'Ново задание',
+        template: 'message',
+        context: {
+          subject: newMessage.subject,
+          data: newMessage.data,
+        },
+      });
 
       return new MessagePayload(message.id);
     } catch (error: any) {
