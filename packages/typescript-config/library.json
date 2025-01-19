@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "preserveWatchOutput": true,
+    "target": "ES2022",
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "noUncheckedIndexedAccess": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "allowJs": true
+  }
+}

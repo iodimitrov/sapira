@@ -1,0 +1,12 @@
+{
+  "name": "@sapira/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write \"**/*.{json,ts}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}

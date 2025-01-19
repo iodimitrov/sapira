@@ -1,0 +1,27 @@
+{
+  "name": "sapira",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "clean": "turbo clean",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^8.57.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "standard-version": "^9.5.0",
+    "turbo": "^2.1.1",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.5.0"
+}

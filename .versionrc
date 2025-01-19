@@ -1,0 +1,28 @@
+{
+  "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "apps/frontend/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "apps/backend/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "packages/eslint-config/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "packages/typescript-config/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "packages/nest-common/package.json",
+      "type": "json"
+    }
+  ]
+}

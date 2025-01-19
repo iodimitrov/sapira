@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true
+  }
+}
