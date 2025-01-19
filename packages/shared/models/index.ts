@@ -1,0 +1,13 @@
+export { User } from './user.model';
+export { Teacher } from './teacher.model';
+export { Subject } from './subject.model';
+export { Student } from './student.model';
+export { StudentGrade } from './student-grade.model';
+export { StudentDossier } from './student-dossier.model';
+export { Schedule } from './schedule.model';
+export { Parent } from './parent.model';
+export { Message } from './message.model';
+export { Institution } from './institution.model';
+export { File } from './file.model';
+export { Class } from './class.model';
+export { Token } from './token.model';

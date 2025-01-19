@@ -1,0 +1,29 @@
+{
+  "name": "@sapira/shared",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./esm/index.d.ts",
+  "scripts": {
+    "build": "concurrently --names \"esm,cjs\" \"tsc --project ./tsconfig.esm.json\" \"tsc --project ./tsconfig.cjs.json\"",
+    "dev": "concurrently --names \"esm,cjs\" \"tsc-watch --project ./tsconfig.esm.json\" \"tsc-watch --project ./tsconfig.cjs.json\"",
+    "clean": "rimraf ./esm ./cjs",
+    "lint": "eslint **/*.{ts,js} --fix --no-warn-ignored",
+    "format": "prettier --write **/*.{ts,js}"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.57.0",
+    "@sapira/eslint-config": "workspace:*",
+    "@sapira/typescript-config": "workspace:*",
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.7",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@nestjs/graphql": "^13.0.1",
+    "@sapira/database": "workspace:*"
+  }
+}

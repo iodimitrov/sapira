@@ -1,0 +1,4 @@
+{
+  "extends": "@sapira/typescript-config/library.json",
+  "exclude": ["cjs", "esm", "node_modules"]
+}
