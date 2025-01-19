@@ -16,11 +16,11 @@ import { UpdateUserInput } from '../inputs/update-user.input';
 import { GenerateUserTokenPayload } from '../payloads/generate-user-token.payload';
 import { UserPayload } from '../payloads/user.payload';
 import { User as UserEntity, UserRole } from '@sapira/database';
-import { InstitutionService } from '../../institution/institution.service';
+import { InstitutionService } from '../../institution/services/institution.service';
 import { TeacherService } from './teacher.service';
 import { StudentService } from './student.service';
 import { ParentService } from './parent.service';
-import { ClassService } from '../../institution/class.service';
+import { ClassService } from '../../institution/services/class.service';
 
 @Injectable()
 export class UserService {

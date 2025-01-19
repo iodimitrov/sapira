@@ -1,4 +1,4 @@
-import { InstitutionService } from './institution.service';
+import { InstitutionService } from './services/institution.service';
 import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {
@@ -6,7 +6,7 @@ import {
   Class as ClassEntity,
 } from '@sapira/database';
 import { DateScalar } from '@sapira/nest-common';
-import { ClassService } from './class.service';
+import { ClassService } from './services/class.service';
 import { UserModule } from '../user/user.module';
 
 @Module({

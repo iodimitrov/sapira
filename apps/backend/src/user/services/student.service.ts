@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
-import { ClassService } from '../../institution/class.service';
+import { ClassService } from '../../institution/services/class.service';
 import { Student as StudentEntity, User as UserEntity } from '@sapira/database';
 
 @Injectable()

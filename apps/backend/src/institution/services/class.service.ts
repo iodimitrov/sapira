@@ -11,10 +11,10 @@ import {
   UserRole,
   User as UserEntity,
 } from '@sapira/database';
-import { ClassPayload } from './payloads/class.payload';
-import { UserService } from '../user/services/user.service';
-import { StudentService } from '../user/services/student.service';
-import { TeacherService } from '../user/services/teacher.service';
+import { ClassPayload } from '../payloads/class.payload';
+import { UserService } from '../../user/services/user.service';
+import { StudentService } from '../../user/services/student.service';
+import { TeacherService } from '../../user/services/teacher.service';
 
 @Injectable()
 export class ClassService {

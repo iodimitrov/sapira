@@ -16,7 +16,7 @@ import {
 import { TeacherPayload } from '../payloads/teacher.payload';
 import { UpdateTeacherInput } from '../inputs/update-teacher.input';
 import { UserService } from './user.service';
-import { ClassService } from '../../institution/class.service';
+import { ClassService } from '../../institution/services/class.service';
 
 @Injectable()
 export class TeacherService {
