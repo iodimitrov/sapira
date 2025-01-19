@@ -1,15 +1,15 @@
-import { GenerateUserTokenPayload } from './payloads/generate-user-token.payload';
-import { GenerateUserTokenInput } from './inputs/generate-user-token.input';
-import { UpdateUserStatusInput } from './inputs/update-user-status.input';
+import { GenerateUserTokenPayload } from '../payloads/generate-user-token.payload';
+import { GenerateUserTokenInput } from '../inputs/generate-user-token.input';
+import { UpdateUserStatusInput } from '../inputs/update-user-status.input';
 import { Args, Mutation, Query, Resolver, Context } from '@nestjs/graphql';
-import { UpdateUserInput } from './inputs/update-user.input';
+import { UpdateUserInput } from '../inputs/update-user.input';
 import { CurrentUser, GqlAuthGuard } from '@sapira/nest-common';
-import { AddUserInput } from './inputs/add-user.input';
-import { UserPayload } from './payloads/user.payload';
-import { AuthService } from './services/auth.service';
-import { LoginInput } from './inputs/login.input';
+import { AddUserInput } from '../inputs/add-user.input';
+import { UserPayload } from '../payloads/user.payload';
+import { AuthService } from '../services/auth.service';
+import { LoginInput } from '../inputs/login.input';
 import { ConfigService } from '@nestjs/config';
-import { UserService } from './services/user.service';
+import { UserService } from '../services/user.service';
 import { UseGuards } from '@nestjs/common';
 import { User, Token } from '@sapira/shared';
 

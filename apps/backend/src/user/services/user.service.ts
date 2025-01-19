@@ -1,5 +1,7 @@
 import {
   ConflictException,
+  forwardRef,
+  Inject,
   Injectable,
   InternalServerErrorException,
   NotFoundException,
@@ -26,6 +28,7 @@ export class UserService {
     @InjectRepository(UserEntity)
     private readonly userRepository: Repository<UserEntity>,
     private readonly institutionService: InstitutionService,
+    @Inject(forwardRef(() => TeacherService))
     private readonly teacherService: TeacherService,
     private readonly studentService: StudentService,
     private readonly parentService: ParentService,

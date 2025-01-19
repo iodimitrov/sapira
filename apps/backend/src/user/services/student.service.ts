@@ -1,5 +1,7 @@
 import {
   ConflictException,
+  forwardRef,
+  Inject,
   Injectable,
   InternalServerErrorException,
   NotFoundException,
@@ -12,6 +14,7 @@ import { Student as StudentEntity, User as UserEntity } from '@sapira/database';
 @Injectable()
 export class StudentService {
   constructor(
+    @Inject(forwardRef(() => ClassService))
     private readonly classService: ClassService,
     @InjectRepository(StudentEntity)
     private readonly studentRepository: Repository<StudentEntity>,
@@ -49,6 +52,18 @@ export class StudentService {
       }
       throw new InternalServerErrorException(error);
     }
+  }
+
+  async findOneByUserId(id: string): Promise<StudentEntity> {
+    const student = (await this.studentRepository.find()).find(
+      (student) => student.user.id === id,
+    );
+
+    if (!student) {
+      throw new NotFoundException(id);
+    }
+
+    return student;
   }
 
   async findAllByIds(ids: string[]): Promise<StudentEntity[]> {

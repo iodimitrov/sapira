@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserResolver } from './user.resolver';
+import { UserResolver } from './resolvers/user.resolver';
 import { UserService } from './services/user.service';
 import { ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
