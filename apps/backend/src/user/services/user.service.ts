@@ -30,8 +30,11 @@ export class UserService {
     private readonly institutionService: InstitutionService,
     @Inject(forwardRef(() => TeacherService))
     private readonly teacherService: TeacherService,
+    @Inject(forwardRef(() => StudentService))
     private readonly studentService: StudentService,
+    @Inject(forwardRef(() => ParentService))
     private readonly parentService: ParentService,
+    @Inject(forwardRef(() => ClassService))
     private readonly classService: ClassService,
   ) {}
 
