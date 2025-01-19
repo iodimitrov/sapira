@@ -18,7 +18,7 @@ export class Student implements StudentEntity {
   startDate?: Date;
 
   @Field(() => Class)
-  class?: Class;
+  class: Class;
 
   @Field()
   prevEducation: string;
