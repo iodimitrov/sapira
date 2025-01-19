@@ -12,6 +12,7 @@ import {
   Class as ClassEntity,
   Student as StudentEntity,
   Parent as ParentEntity,
+  StudentDossier as StudentDossierEntity,
 } from '@sapira/database';
 import { InstitutionModule } from '../institution/institution.module';
 import { TeacherService } from './services/teacher.service';
@@ -31,6 +32,7 @@ import { StudentDossierResolver } from './resolvers/student-dossier.resolver';
       ClassEntity,
       StudentEntity,
       ParentEntity,
+      StudentDossierEntity,
     ]),
     JwtModule.registerAsync({
       inject: [ConfigService],
