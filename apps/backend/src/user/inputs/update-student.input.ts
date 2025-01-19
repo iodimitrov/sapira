@@ -1,5 +1,5 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { UploadScalar } from '@sapira/nest-common';
+import { GraphQLUpload, FileUpload } from 'graphql-upload-minimal';
 
 @InputType()
 export class UpdateStudentInput {
@@ -18,6 +18,6 @@ export class UpdateStudentInput {
   @Field({ nullable: true })
   recordMessage?: string;
 
-  @Field(() => [UploadScalar], { nullable: true })
-  files?: UploadScalar[];
+  @Field(() => [GraphQLUpload], { nullable: true })
+  files?: Promise<FileUpload[]>;
 }

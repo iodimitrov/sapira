@@ -1,6 +1,5 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { EducationStage, InstitutionType } from '@sapira/database';
-import { IsEmail } from 'class-validator';
 
 @InputType()
 export class UpdateInstitutionInput {
@@ -11,7 +10,6 @@ export class UpdateInstitutionInput {
   name?: string;
 
   @Field({ nullable: true })
-  @IsEmail()
   email?: string;
 
   @Field(() => InstitutionType, { nullable: true })
