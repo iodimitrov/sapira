@@ -184,4 +184,20 @@ export class StudentService {
         ) || false
     );
   }
+
+  async findAllForEachClass(
+    currUser: UserEntity,
+    classesIds: string[],
+  ): Promise<StudentEntity[]> {
+    const usersIds = (await this.userService.findAll(currUser)).map(
+      (user: UserEntity) => user?.id,
+    );
+    const students = await this.studentRepository.find();
+
+    return students.filter(
+      (student) =>
+        usersIds.includes(student?.user?.id) &&
+        classesIds.includes(student.class.id),
+    );
+  }
 }
