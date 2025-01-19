@@ -58,7 +58,7 @@ export class Schedule {
       referencedColumnName: 'id',
     },
   })
-  teachers?: Teacher[];
+  teachers: Teacher[] | null;
 
   @ManyToOne(() => Institution, (institution) => institution.schedules, {
     eager: true,

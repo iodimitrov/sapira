@@ -61,15 +61,15 @@ export class Institution {
   alias: string;
 
   @OneToMany(() => User, (user) => user.institution, { nullable: true })
-  users?: User[];
+  users: User[] | null;
 
   @OneToMany(() => Subject, (subject) => subject.institution, {
     nullable: true,
   })
-  subjects: Subject[];
+  subjects: Subject[] | null;
 
   @OneToMany(() => Schedule, (schedule) => schedule.institution, {
     nullable: true,
   })
-  schedules: Schedule[];
+  schedules: Schedule[] | null;
 }

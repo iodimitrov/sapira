@@ -49,11 +49,11 @@ export class StudentDossier {
       referencedColumnName: 'id',
     },
   })
-  files?: File[];
+  files: File[] | null;
 
   @ManyToOne(() => Subject, (subject) => subject.studentDossiers, {
     nullable: true,
     eager: true,
   })
-  subject?: Subject;
+  subject: Subject | null;
 }

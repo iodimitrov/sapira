@@ -59,7 +59,7 @@ export class Message {
       referencedColumnName: 'id',
     },
   })
-  toUsers: User[];
+  toUsers: User[] | null;
 
   @ManyToMany(() => Class, (cls) => cls.messages, {
     eager: true,
@@ -76,24 +76,24 @@ export class Message {
       referencedColumnName: 'id',
     },
   })
-  toClasses: Class[];
+  toClasses: Class[] | null;
 
   @Column({
     nullable: true,
     type: 'enum',
     enum: AssignmentType,
   })
-  assignmentType?: AssignmentType;
+  assignmentType: AssignmentType | null;
 
   @Column('text', { nullable: true })
-  data?: string;
+  data: string | null;
 
   @OneToMany(() => File, (file) => file.message, {
     nullable: true,
     eager: true,
     cascade: true,
   })
-  files?: File[];
+  files: File[] | null;
 
   @Column({
     type: 'enum',
@@ -112,8 +112,8 @@ export class Message {
     eager: true,
     nullable: true,
   })
-  subject?: Subject;
+  subject: Subject | null;
 
   @Column('timestamp', { nullable: true })
-  assignmentDueDate?: Date;
+  assignmentDueDate: Date | null;
 }
