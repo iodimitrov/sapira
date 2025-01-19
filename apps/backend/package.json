@@ -27,6 +27,7 @@
     "@sapira/database": "workspace:*",
     "@sapira/nest-common": "workspace:*",
     "cookie-parser": "^1.4.7",
+    "helmet": "^8.0.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
