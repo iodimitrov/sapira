@@ -7,7 +7,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import {
   Teacher as TeacherEntity,
   User as UserEntity,
@@ -67,6 +67,12 @@ export class TeacherService {
     const teachers = await this.teacherRepository.find();
 
     return teachers.filter((teacher) => usersIds.includes(teacher.user.id));
+  }
+
+  async findAllByIds(ids: string[]): Promise<TeacherEntity[]> {
+    return this.teacherRepository.find({
+      where: { id: In(ids) },
+    });
   }
 
   async findAvailableClassTeachers(
