@@ -4,7 +4,7 @@ import { UserResolver } from './resolvers/user.resolver';
 import { UserService } from './services/user.service';
 import { ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { jwtConfig } from '@sapira/nest-common';
+import { CloudflareModule, jwtConfig } from '@sapira/nest-common';
 import { AuthService } from './services/auth.service';
 import {
   User as UserEntity,
@@ -20,6 +20,8 @@ import { ParentService } from './services/parent.service';
 import { TeacherResolver } from './resolvers/teacher.resolver';
 import { ParentResolver } from './resolvers/parent.resolver';
 import { StudentResolver } from './resolvers/student.resolver';
+import { StudentDossierService } from './services/student-dossier.service';
+import { StudentDossierResolver } from './resolvers/student-dossier.resolver';
 
 @Module({
   imports: [
@@ -36,8 +38,10 @@ import { StudentResolver } from './resolvers/student.resolver';
         jwtConfig(configService),
     }),
     InstitutionModule,
+    CloudflareModule,
   ],
   providers: [
+    StudentDossierResolver,
     TeacherResolver,
     UserResolver,
     ParentResolver,
@@ -47,6 +51,7 @@ import { StudentResolver } from './resolvers/student.resolver';
     TeacherService,
     StudentService,
     ParentService,
+    StudentDossierService,
   ],
   exports: [
     UserService,
@@ -54,6 +59,7 @@ import { StudentResolver } from './resolvers/student.resolver';
     TeacherService,
     StudentService,
     ParentService,
+    StudentDossierService,
   ],
 })
 export class UserModule {}
