@@ -23,10 +23,7 @@ export class File {
   updatedAt: Date;
 
   @Column('text')
-  filename: string;
-
-  @Column('text')
-  cloudFilename: string;
+  key: string;
 
   publicUrl?: string | null;
 

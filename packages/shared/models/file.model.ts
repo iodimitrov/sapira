@@ -15,10 +15,7 @@ export class File implements FileEntity {
   updatedAt: Date;
 
   @Field()
-  filename: string;
-
-  @Field()
-  cloudFilename: string;
+  key: string;
 
   @Field({ nullable: true })
   publicUrl?: string | null;
