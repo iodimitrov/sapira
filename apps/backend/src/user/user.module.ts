@@ -10,13 +10,23 @@ import {
   User as UserEntity,
   Teacher as TeacherEntity,
   Class as ClassEntity,
+  Student as StudentEntity,
+  Parent as ParentEntity,
 } from '@sapira/database';
 import { InstitutionModule } from '../institution/institution.module';
 import { TeacherService } from './services/teacher.service';
+import { StudentService } from './services/student.service';
+import { ParentService } from './services/parent.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UserEntity, TeacherEntity, ClassEntity]),
+    TypeOrmModule.forFeature([
+      UserEntity,
+      TeacherEntity,
+      ClassEntity,
+      StudentEntity,
+      ParentEntity,
+    ]),
     JwtModule.registerAsync({
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) =>
@@ -24,7 +34,20 @@ import { TeacherService } from './services/teacher.service';
     }),
     InstitutionModule,
   ],
-  providers: [UserResolver, UserService, AuthService, TeacherService],
-  exports: [UserService, AuthService, TeacherService],
+  providers: [
+    UserResolver,
+    UserService,
+    AuthService,
+    TeacherService,
+    StudentService,
+    ParentService,
+  ],
+  exports: [
+    UserService,
+    AuthService,
+    TeacherService,
+    StudentService,
+    ParentService,
+  ],
 })
 export class UserModule {}
