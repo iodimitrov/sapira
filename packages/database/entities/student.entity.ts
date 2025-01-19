@@ -10,7 +10,7 @@ import {
   Entity,
 } from 'typeorm';
 import { StudentDossier } from './student-dossier.entity';
-import { StudentGrade } from './grade.entity';
+import { StudentGrade } from './student-grade.entity';
 import { Parent } from './parent.entity';
 import { Class } from './class.entity';
 import { User } from './user.entity';

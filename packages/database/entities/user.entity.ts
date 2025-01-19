@@ -10,7 +10,7 @@ import {
 } from 'typeorm';
 import { StudentDossier } from './student-dossier.entity';
 import { Institution } from './institution.entity';
-import { StudentGrade } from './grade.entity';
+import { StudentGrade } from './student-grade.entity';
 import { Message } from './message.entity';
 
 export enum UserStatus {

@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { Class } from './class.entity';
 import { StudentDossier } from './student-dossier.entity';
-import { StudentGrade } from './grade.entity';
+import { StudentGrade } from './student-grade.entity';
 import { Institution } from './institution.entity';
 import { Message } from './message.entity';
 import { Schedule } from './schedule.entity';

@@ -25,7 +25,7 @@ export {
   InstitutionType,
 } from './institution.entity';
 
-export { StudentGrade, GradeType, GradeWord } from './grade.entity';
+export { StudentGrade, GradeType, GradeWord } from './student-grade.entity';
 
 export { File } from './file.entity';
 
