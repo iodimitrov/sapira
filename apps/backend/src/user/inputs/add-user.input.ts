@@ -1,5 +1,6 @@
 import { IsEmail, MaxLength, MinLength } from 'class-validator';
 import { Field, InputType } from '@nestjs/graphql';
+import { UploadScalar } from '@sapira/nest-common';
 
 @InputType()
 export class AddUserInput {
@@ -26,7 +27,6 @@ export class AddUserInput {
   @Field({ nullable: true })
   registerToken?: string;
 
-  // TODO: upload scalar
   @Field({ nullable: true })
-  photo?: any;
+  photo?: UploadScalar;
 }
