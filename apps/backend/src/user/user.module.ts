@@ -17,6 +17,7 @@ import { InstitutionModule } from '../institution/institution.module';
 import { TeacherService } from './services/teacher.service';
 import { StudentService } from './services/student.service';
 import { ParentService } from './services/parent.service';
+import { TeacherResolver } from './resolvers/teacher.resolver';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { ParentService } from './services/parent.service';
     InstitutionModule,
   ],
   providers: [
+    TeacherResolver,
     UserResolver,
     UserService,
     AuthService,
