@@ -12,6 +12,8 @@ import { ClassService } from '../../institution/services/class.service';
 import {
   Student as StudentEntity,
   User as UserEntity,
+  Subject as SubjectEntity,
+  Teacher as TeacherEntity,
   UserRole,
 } from '@sapira/database';
 import { GetStudentTokenPayload } from '../payloads/get-student-token.payload';
@@ -19,6 +21,7 @@ import { StudentPayload } from '../payloads/student.payload';
 import { UpdateStudentRecordInput } from '../inputs/update-student-record.input';
 import { UserService } from './user.service';
 import { UpdateStudentInput } from '../inputs/update-student.input';
+import { TeacherService } from './teacher.service';
 
 @Injectable()
 export class StudentService {
@@ -27,6 +30,7 @@ export class StudentService {
     private readonly classService: ClassService,
     @Inject(forwardRef(() => UserService))
     private readonly userService: UserService,
+    private readonly teacherService: TeacherService,
     @InjectRepository(StudentEntity)
     private readonly studentRepository: Repository<StudentEntity>,
   ) {}
@@ -162,5 +166,21 @@ export class StudentService {
     );
 
     return students.filter((student) => usersIds.includes(student?.user?.id));
+  }
+
+  async verifyTeacherToStudent(
+    student: StudentEntity,
+    teacher: TeacherEntity,
+  ): Promise<boolean> {
+    const cls = await this.classService.findOne(student.class.id);
+    teacher = await this.teacherService.findOneByUserId(teacher.user.id);
+
+    return (
+      teacher.subjects
+        ?.map((subject: SubjectEntity) => subject.id)
+        .some((id: string) =>
+          cls.subjects?.map((subject) => subject.id).includes(id),
+        ) || false
+    );
   }
 }
