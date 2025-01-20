@@ -1,4 +1,5 @@
 import '~/styles/globals.scss';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import { CssBaseline, StylesProvider, ThemeProvider } from '@material-ui/core';
