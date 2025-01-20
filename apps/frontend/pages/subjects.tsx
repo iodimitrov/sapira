@@ -61,7 +61,7 @@ const SubjectCard = (props: SubjectCardProps) => {
               color="textPrimary"
               underline="none"
               href={{
-                pathname: '/editsubject',
+                pathname: '/edit-subject',
                 query: { id: props.id },
               }}
             >

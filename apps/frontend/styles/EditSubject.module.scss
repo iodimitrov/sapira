@@ -1,0 +1,136 @@
+@import 'variables';
+
+.content {
+  margin: {
+    top: 0.9rem;
+    right: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .actions-container {
+    margin-bottom: 0.6rem;
+
+    .button-link {
+      margin: 0 0.3rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .confirm {
+      box-shadow: $button-shadow;
+    }
+  }
+
+  .edit-subject-container {
+    padding: 1.5rem;
+    box-shadow: $card-shadow;
+    background-color: white;
+    border-radius: 0.6rem;
+
+    .input-container {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: row;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .years-container,
+      .class-container {
+        margin-left: 1.25rem;
+        display: flex;
+        flex-direction: row;
+
+        .years-input,
+        .class-select,
+        .teachers-select {
+          min-width: 11.25rem;
+
+          &:first-child {
+            margin-right: 0.3rem;
+          }
+
+          &:last-child {
+            margin-left: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 1.25rem;
+    margin: {
+      top: 1.5rem;
+      right: 0;
+    }
+    flex-direction: column-reverse;
+
+    .actions-container {
+      margin: {
+        bottom: 0;
+        top: 0.6rem;
+      }
+    }
+
+    .edit-subject-container {
+      .input-container {
+        flex-direction: column;
+
+        .years-container,
+        .class-container {
+          margin: {
+            left: 0;
+            top: 1.25rem;
+          }
+
+          .years-input,
+          .class-select,
+          .teachers-select {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .content {
+    .edit-subject-container {
+      .input-container {
+        flex-direction: column;
+
+        .years-container,
+        .class-container {
+          flex-direction: column;
+
+          .years-input,
+          .class-select,
+          .teachers-select {
+            width: 100%;
+            margin-top: 1.25rem;
+
+            &:first-child {
+              margin-top: 0;
+              margin-right: 0;
+            }
+
+            &:last-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
