@@ -40,6 +40,8 @@ export class R2Service {
         accessKeyId,
         secretAccessKey,
       },
+      requestChecksumCalculation: 'WHEN_REQUIRED',
+      responseChecksumValidation: 'WHEN_REQUIRED',
     });
     this.bucket = this.configService.getOrThrow<string>('R2_BUCKET');
   }
