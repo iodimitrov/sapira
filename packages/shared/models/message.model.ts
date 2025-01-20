@@ -1,4 +1,4 @@
-import { Field, ID, registerEnumType } from '@nestjs/graphql';
+import { Field, ID, ObjectType, registerEnumType } from '@nestjs/graphql';
 import {
   AssignmentType,
   Message as MessageEntity,
@@ -22,6 +22,7 @@ registerEnumType(MessageStatus, {
   name: 'MessageStatus',
 });
 
+@ObjectType()
 export class Message implements MessageEntity {
   @Field(() => ID)
   id: string;

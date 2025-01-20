@@ -1,8 +1,9 @@
-import { Field, ID } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Parent as ParentEntity } from '@sapira/database';
 import { User } from './user.model';
 import { Student } from './student.model';
 
+@ObjectType()
 export class Parent implements ParentEntity {
   @Field(() => ID)
   id: string;

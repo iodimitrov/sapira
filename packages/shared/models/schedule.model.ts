@@ -1,4 +1,4 @@
-import { Field, ID, registerEnumType } from '@nestjs/graphql';
+import { Field, ID, ObjectType, registerEnumType } from '@nestjs/graphql';
 import { Schedule as ScheduleEntity, WeekDays } from '@sapira/database';
 import { Subject } from './subject.model';
 import { Teacher } from './teacher.model';
@@ -9,6 +9,7 @@ registerEnumType(WeekDays, {
   name: 'WeekDays',
 });
 
+@ObjectType()
 export class Schedule implements ScheduleEntity {
   @Field(() => ID)
   id: string;

@@ -1,4 +1,4 @@
-import { Field, ID, Int, registerEnumType } from '@nestjs/graphql';
+import { Field, ID, Int, ObjectType, registerEnumType } from '@nestjs/graphql';
 import { ContractType, Teacher as TeacherEntity } from '@sapira/database';
 import { User } from './user.model';
 import { Subject } from './subject.model';
@@ -8,6 +8,7 @@ registerEnumType(ContractType, {
   name: 'ContractType',
 });
 
+@ObjectType()
 export class Teacher implements TeacherEntity {
   @Field(() => ID)
   id: string;

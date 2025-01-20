@@ -1,12 +1,13 @@
 import { Student as StudentEntity } from '@sapira/database';
 import { User } from './user.model';
-import { Field, ID } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { StudentDossier } from './student-dossier.model';
 import { File } from './file.model';
 import { StudentGrade } from './student-grade.model';
 import { Parent } from './parent.model';
 import { Class } from './class.model';
 
+@ObjectType()
 export class Student implements StudentEntity {
   @Field(() => ID)
   id: string;

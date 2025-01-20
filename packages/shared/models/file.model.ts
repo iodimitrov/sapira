@@ -1,9 +1,10 @@
-import { Field, ID } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { File as FileEntity } from '@sapira/database';
 import { Message } from './message.model';
 import { Student } from './student.model';
 import { StudentDossier } from './student-dossier.model';
 
+@ObjectType()
 export class File implements FileEntity {
   @Field(() => ID)
   id: string;

@@ -1,4 +1,4 @@
-import { Field, ID, registerEnumType } from '@nestjs/graphql';
+import { Field, ID, ObjectType, registerEnumType } from '@nestjs/graphql';
 import {
   EducationStage,
   Institution as InstitutionEntity,
@@ -16,6 +16,7 @@ registerEnumType(EducationStage, {
   name: 'EducationStage',
 });
 
+@ObjectType()
 export class Institution implements InstitutionEntity {
   @Field(() => ID)
   id: string;

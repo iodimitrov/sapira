@@ -1,4 +1,4 @@
-import { Field, ID, Int, registerEnumType } from '@nestjs/graphql';
+import { Field, ID, Int, ObjectType, registerEnumType } from '@nestjs/graphql';
 import { Class as ClassEntity, TokenStatus } from '@sapira/database';
 import { Institution } from './institution.model';
 import { Teacher } from './teacher.model';
@@ -10,6 +10,7 @@ registerEnumType(TokenStatus, {
   name: 'TokenStatus',
 });
 
+@ObjectType()
 export class Class implements ClassEntity {
   @Field(() => ID)
   id: string;

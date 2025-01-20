@@ -1,4 +1,4 @@
-import { Field, ID, Int } from '@nestjs/graphql';
+import { Field, ID, Int, ObjectType } from '@nestjs/graphql';
 import { Subject as SubjectEntity } from '@sapira/database';
 import { Institution } from './institution.model';
 import { Teacher } from './teacher.model';
@@ -8,6 +8,7 @@ import { Message } from './message.model';
 import { StudentDossier } from './student-dossier.model';
 import { StudentGrade } from './student-grade.model';
 
+@ObjectType()
 export class Subject implements SubjectEntity {
   @Field(() => ID)
   id: string;
