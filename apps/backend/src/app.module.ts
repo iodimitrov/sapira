@@ -6,7 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { getConfig } from '@sapira/database';
 import { UserModule } from './user/user.module';
 import { InstitutionModule } from './institution/institution.module';
-import { BaseAuthModule } from '@sapira/nest-common';
+import { BaseAuthModule, DateScalar } from '@sapira/nest-common';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -58,6 +58,6 @@ import { MessageModule } from './message/message.module';
     MessageModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, DateScalar],
 })
 export class AppModule {}
