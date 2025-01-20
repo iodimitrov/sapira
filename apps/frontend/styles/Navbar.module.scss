@@ -1,0 +1,57 @@
+@import 'variables';
+
+.navbar {
+  background-color: white;
+  width: auto;
+
+  .title {
+    font-size: 28px;
+    width: 100%;
+    margin-right: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: $dark-color;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .link {
+      margin: 0 8px;
+    }
+
+    button {
+      width: max-content;
+      padding: 8px 16px;
+      color: $dark-color;
+    }
+
+    :global(.MuiButton-containedPrimary) {
+      color: white;
+    }
+
+    :global(.MuiButton-outlinedPrimary) {
+      color: $primary-color;
+    }
+
+    .separator {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .drawer-toggle {
+    margin-right: 13px;
+    color: $dark-color;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .navbar {
+    .title {
+      margin-left: 26px;
+    }
+  }
+}

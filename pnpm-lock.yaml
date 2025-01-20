@@ -192,9 +192,12 @@ importers:
       '@sapira/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@sapira/nest-common':
+      '@sapira/shared':
         specifier: workspace:*
-        version: link:../../packages/nest-common
+        version: link:../../packages/shared
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       graphql-request:
         specifier: ^7.1.2
         version: 7.1.2(graphql@16.10.0)
@@ -2744,6 +2747,10 @@ packages:
 
   clsx@1.2.1:
     resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
   co@4.6.0:
@@ -9798,6 +9805,8 @@ snapshots:
   clone@1.0.4: {}
 
   clsx@1.2.1: {}
+
+  clsx@2.1.1: {}
 
   co@4.6.0: {}
 
