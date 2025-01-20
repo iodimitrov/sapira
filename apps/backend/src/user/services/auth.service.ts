@@ -20,7 +20,7 @@ export class AuthService {
   ) {}
 
   async validateUser(email: string, pass: string) {
-    const user = await this.userService.findOne(email);
+    const user = await this.userService.findOneByEmail(email);
     if (user) {
       if (await bcrypt.compare(pass, user.password)) {
         const refreshToken = this.jwtService.sign(

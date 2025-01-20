@@ -69,7 +69,7 @@ export class UserResolver {
       httpOnly: true,
     });
 
-    return this.userService.findOne(input.email);
+    return this.userService.findOneByEmail(input.email);
   }
 
   @Query(() => Boolean)
