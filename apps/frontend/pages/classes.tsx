@@ -119,7 +119,7 @@ const Classes = () => {
               <Link
                 className={styles['class-add']}
                 underline="none"
-                href="/addclass"
+                href="/add-class"
               >
                 <Button
                   disableElevation
