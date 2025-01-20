@@ -116,15 +116,21 @@ export class SubjectService {
 
       return this.subjectRepository.find({
         where: {
-          institution: institution,
-          class: student.class,
+          institution: {
+            id: institution.id,
+          },
+          class: {
+            id: student.class.id,
+          },
         },
       });
     } else if (user.role === UserRole.TEACHER) {
       const teacher = await this.teacherService.findOneByUserId(currUser.id);
       let subjects = await this.subjectRepository.find({
         where: {
-          institution: teacher.user.institution,
+          institution: {
+            id: teacher.user.institution.id,
+          },
         },
       });
 
@@ -149,7 +155,11 @@ export class SubjectService {
       });
     } else {
       return this.subjectRepository.find({
-        where: { institution: institution },
+        where: {
+          institution: {
+            id: institution.id,
+          },
+        },
       });
     }
   }

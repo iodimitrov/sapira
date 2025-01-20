@@ -138,7 +138,11 @@ export class GradeService {
   async findAllForOneStudent(studentId: string): Promise<StudentGradeEntity[]> {
     const student = await this.studentService.findOne(studentId);
     const grades = await this.gradeRepository.find({
-      where: { student: student },
+      where: {
+        student: {
+          id: student.id,
+        },
+      },
     });
 
     if (!grades) {
@@ -152,7 +156,9 @@ export class GradeService {
     const subject = await this.subjectService.findOne(subjectId);
     const grades = await this.gradeRepository.find({
       where: {
-        subject: subject,
+        subject: {
+          id: subject.id,
+        },
       },
     });
 

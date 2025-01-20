@@ -123,7 +123,9 @@ export class ClassService {
           },
         },
         where: {
-          institution: user.institution,
+          institution: {
+            id: user.institution.id,
+          },
         },
       });
 
@@ -151,7 +153,11 @@ export class ClassService {
       ];
     } else if (user.role === UserRole.ADMIN) {
       return this.classRepository.find({
-        where: { institution: user.institution },
+        where: {
+          institution: {
+            id: user.institution.id,
+          },
+        },
       });
     }
 

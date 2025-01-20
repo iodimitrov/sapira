@@ -170,7 +170,11 @@ export class UserService {
     }))!.institution;
 
     return this.userRepository.find({
-      where: { institution: institution },
+      where: {
+        institution: {
+          id: institution.id,
+        },
+      },
     });
   }
 

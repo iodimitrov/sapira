@@ -85,7 +85,11 @@ export class ScheduleService {
       .institution;
 
     return this.scheduleRepository.find({
-      where: { institution: institution },
+      where: {
+        institution: {
+          id: institution.id,
+        },
+      },
     });
   }
 
@@ -96,7 +100,11 @@ export class ScheduleService {
     const institution = (await this.userService.findOne(currUser.id))
       .institution;
     const schedules = await this.scheduleRepository.find({
-      where: { institution: institution },
+      where: {
+        institution: {
+          id: institution.id,
+        },
+      },
     });
 
     return schedules.filter((schedule) =>
@@ -111,7 +119,11 @@ export class ScheduleService {
     const institution = (await this.userService.findOne(currUser.id))
       .institution;
     const schedules = await this.scheduleRepository.find({
-      where: { institution: institution },
+      where: {
+        institution: {
+          id: institution.id,
+        },
+      },
     });
 
     return schedules.filter((schedule) => schedule.class.id === classId);
@@ -125,7 +137,11 @@ export class ScheduleService {
     const institution = (await this.userService.findOne(currUser.id))
       .institution;
     const schedules = await this.scheduleRepository.find({
-      where: { institution: institution },
+      where: {
+        institution: {
+          id: institution.id,
+        },
+      },
     });
 
     if (classId) {

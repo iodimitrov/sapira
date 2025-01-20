@@ -107,7 +107,11 @@ export class StudentService {
   async getToken(currUser: UserEntity): Promise<GetStudentTokenPayload> {
     const token = (
       await this.studentRepository.findOne({
-        where: { user: await this.userService.findOne(currUser.id) },
+        where: {
+          user: {
+            id: currUser.id,
+          },
+        },
       })
     )?.token;
 
