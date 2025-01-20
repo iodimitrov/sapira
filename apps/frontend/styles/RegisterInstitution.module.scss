@@ -1,0 +1,68 @@
+@import 'variables';
+
+.content {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-size: 2.8rem;
+    margin: 1.5rem 0 0.9rem;
+    color: $dark-color;
+  }
+
+  .form {
+    width: 28rem;
+    box-shadow: $card-shadow;
+    border-radius: 0.6rem;
+    padding: 1.25rem 3.2rem;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      margin: 1.6rem 0;
+      color: $dark-color;
+
+      .sub-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $dark-color;
+        margin-bottom: 0.9rem;
+      }
+
+      .textfield {
+        margin: 0.6rem 0;
+        input {
+          color: $dark-color;
+        }
+      }
+
+      .submit {
+        padding: 0.75rem 1rem;
+        border-radius: 0.25rem;
+      }
+
+      .text {
+        align-self: center;
+      }
+    }
+  }
+
+  .register {
+    color: $dark-color;
+
+    margin-top: 3.1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .content {
+    .form {
+      box-shadow: none;
+      width: 100%;
+      padding: 1.5rem 1.9rem;
+    }
+  }
+}
