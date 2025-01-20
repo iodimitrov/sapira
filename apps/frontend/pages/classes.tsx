@@ -60,7 +60,7 @@ const ClassCard = (props: ClassCardProps) => {
             color="textPrimary"
             underline="none"
             href={{
-              pathname: '/editclass',
+              pathname: '/edit-class',
               query: { id: props.id },
             }}
           >

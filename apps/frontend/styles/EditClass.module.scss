@@ -1,0 +1,153 @@
+@import 'variables';
+
+.content {
+  margin: {
+    top: 0.9rem;
+    right: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .actions-container {
+    margin-bottom: 0.6rem;
+
+    .button-link {
+      margin: 0 0.3rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .confirm {
+      box-shadow: $button-shadow;
+    }
+  }
+
+  .edit-class-container {
+    padding: 1.5rem;
+    box-shadow: $card-shadow;
+    background-color: white;
+    border-radius: 0.6rem;
+
+    .input-container {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: row;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .classnumber-select {
+        min-width: 6.25rem;
+      }
+
+      .classletter-select {
+        min-width: 5rem;
+      }
+
+      .studentcount-select {
+        min-width: 13.75rem;
+      }
+
+      .teacher-select {
+        min-width: 13.75rem;
+      }
+
+      .years-container {
+        display: flex;
+        flex-direction: row;
+
+        .years-input {
+          min-width: 11.25rem;
+
+          &:first-child {
+            margin-right: 0.3rem;
+          }
+
+          &:last-child {
+            margin-left: 0.3rem;
+          }
+        }
+      }
+
+      & > * {
+        &:first-child {
+          margin-left: 0;
+        }
+
+        margin-left: 1.25rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 1.25rem;
+    margin: {
+      top: 1.5rem;
+      right: 0;
+    }
+    flex-direction: column-reverse;
+
+    .actions-container {
+      margin: {
+        bottom: 0;
+        top: 0.6rem;
+      }
+    }
+
+    .edit-class-container {
+      .input-container {
+        flex-direction: column;
+
+        .teacher-select {
+          width: 100%;
+        }
+
+        .years-container {
+          .years-input {
+            width: 100%;
+          }
+        }
+
+        & > * {
+          &:first-child {
+            margin-top: 0;
+          }
+
+          margin-top: 1.25rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    .edit-class-container {
+      .input-container {
+        .years-container {
+          flex-direction: column;
+
+          .years-input {
+            &:first-child {
+              margin-right: 0;
+            }
+
+            &:last-child {
+              margin-top: 0.9rem;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
