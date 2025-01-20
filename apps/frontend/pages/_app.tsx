@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <StylesProvider injectFirst>
           <SWRConfig
             value={{
-              fetcher: (query: string, variables?: any) =>
+              fetcher: ([query, variables]: [string, any]) =>
                 gqlClient.request(query, variables),
             }}
           >
