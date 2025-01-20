@@ -23,8 +23,8 @@ import styles from 'styles/RegisterInstitution.module.scss';
 import Loader from 'components/Loader';
 import { useAuth } from '../hooks/useAuth';
 import gqlClient from '../client';
-import { EducationStage, InstitutionType } from '@sapira/database';
 import { getEducationStage, getInstitutionType } from '../utils';
+import { EducationStage, InstitutionType } from '../types';
 
 const Register = () => {
   const router = useRouter();
@@ -214,7 +214,14 @@ const Register = () => {
                     getEducationStage(selected as string)
                   }
                 >
-                  {Object.values(EducationStage).map((stage) => (
+                  {(
+                    [
+                      'elementary',
+                      'high',
+                      'primary',
+                      'united',
+                    ] satisfies EducationStage[]
+                  ).map((stage) => (
                     <MenuItem key={stage} value={stage}>
                       {`${getEducationStage(stage)}`}
                     </MenuItem>
@@ -239,7 +246,18 @@ const Register = () => {
                     getInstitutionType(selected as string)
                   }
                 >
-                  {Object.values(InstitutionType).map((type) => (
+                  {(
+                    [
+                      'art',
+                      'humanitarian',
+                      'linguistical',
+                      'mathematical',
+                      'natural_mathematical',
+                      'ou',
+                      'su',
+                      'technological',
+                    ] satisfies InstitutionType[]
+                  ).map((type) => (
                     <MenuItem key={type} value={type}>
                       {`${getInstitutionType(type)}`}
                     </MenuItem>

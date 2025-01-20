@@ -1,4 +1,4 @@
-import { EducationStage, InstitutionType } from '@sapira/database';
+import type { EducationStage, InstitutionType } from '@sapira/database';
 
 export const getInstitutionType = (
   type: InstitutionType | string | undefined,

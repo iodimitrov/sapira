@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { gql } from 'graphql-request';
 import gqlClient from '../client';
-import { User } from '@sapira/database';
+import type { User } from '@sapira/database';
 
 type AuthStatus = 'FETCHING' | 'DONE' | 'REDIRECT';
 
