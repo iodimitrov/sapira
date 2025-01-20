@@ -140,7 +140,7 @@ const ViewStudent = () => {
             }
             message
             files {
-              filename
+              key
               publicUrl
             }
           }
