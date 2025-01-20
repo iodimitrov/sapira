@@ -19,3 +19,7 @@ export type AssignmentType = 'HOMEWORK' | 'CLASSWORK' | 'EXAM';
 export type UserRole = 'ADMIN' | 'PARENT' | 'STUDENT' | 'TEACHER' | 'VIEWER';
 
 export type GradeType = 'YEAR' | 'TURM_1' | 'TURM_2' | 'ONGOING';
+
+export type ContractType = 'PART_TIME' | 'FULL_TIME';
+
+export type UserStatus = 'UNVERIFIED' | 'ACTIVE' | 'INACTIVE' | 'BLOCKED';
