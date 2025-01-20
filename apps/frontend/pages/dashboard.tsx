@@ -304,7 +304,7 @@ const Dashboard = () => {
                   onClose={() => setAddDialog(false)}
                 >
                   <DialogTitle className={styles['dialog-title']}>
-                    Добави събощение
+                    Добави съобщение
                   </DialogTitle>
                   <DialogContent className={styles['dialog-content']}>
                     <div className={styles['input-container']}>
