@@ -18,10 +18,10 @@ export class Subject implements SubjectEntity {
   @Field(() => Int)
   endYear: number;
 
-  @Field()
+  @Field(() => String)
   name: string;
 
-  @Field()
+  @Field(() => String)
   description: string;
 
   @Field(() => Institution)

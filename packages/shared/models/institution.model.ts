@@ -20,16 +20,16 @@ export class Institution implements InstitutionEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
-  @Field()
+  @Field(() => String)
   name: string;
 
-  @Field()
+  @Field(() => String)
   email: string;
 
   @Field(() => InstitutionType)
@@ -38,7 +38,7 @@ export class Institution implements InstitutionEntity {
   @Field(() => EducationStage)
   educationalStage: EducationStage;
 
-  @Field()
+  @Field(() => String)
   alias: string;
 
   @Field(() => [User], { nullable: true })

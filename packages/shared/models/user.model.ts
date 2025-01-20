@@ -18,31 +18,31 @@ export class User implements UserEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
-  @Field()
+  @Field(() => String)
   firstName: string;
 
-  @Field()
+  @Field(() => String)
   middleName: string;
 
-  @Field()
+  @Field(() => String)
   lastName: string;
 
-  @Field()
+  @Field(() => String)
   email: string;
 
-  @Field()
+  @Field(() => String)
   password: string;
 
   @Field(() => UserRole)
   role: UserRole;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   registerToken?: string | null;
 
   @Field(() => UserStatus)

@@ -7,10 +7,10 @@ export class Parent implements ParentEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
   @Field(() => User)

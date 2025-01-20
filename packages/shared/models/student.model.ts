@@ -20,16 +20,16 @@ export class Student implements StudentEntity {
   @Field(() => Class)
   class: Class;
 
-  @Field()
+  @Field(() => String)
   prevEducation: string;
 
-  @Field()
+  @Field(() => String)
   token: string;
 
   @Field(() => [Parent], { nullable: true })
   parents?: Parent[] | null;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   recordMessage?: string | null;
 
   @Field(() => [File], { nullable: true })

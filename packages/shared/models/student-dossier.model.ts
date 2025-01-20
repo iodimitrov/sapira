@@ -9,13 +9,13 @@ export class StudentDossier implements StudentDossierEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
-  @Field()
+  @Field(() => String)
   message: string;
 
   @Field(() => User)

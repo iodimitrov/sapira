@@ -15,7 +15,7 @@ export class Teacher implements TeacherEntity {
   @Field(() => User)
   user: User;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   education?: string | null;
 
   @Field(() => Int, { nullable: true })
@@ -24,7 +24,7 @@ export class Teacher implements TeacherEntity {
   @Field(() => ContractType, { nullable: true })
   contractType?: ContractType | null;
 
-  @Field()
+  @Field(() => String)
   token: string;
 
   @Field(() => [Subject], { nullable: true })

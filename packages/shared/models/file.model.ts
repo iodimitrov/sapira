@@ -8,16 +8,16 @@ export class File implements FileEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
-  @Field()
+  @Field(() => String)
   key: string;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   publicUrl?: string | null;
 
   @Field(() => Message)

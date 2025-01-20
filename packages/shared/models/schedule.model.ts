@@ -13,10 +13,10 @@ export class Schedule implements ScheduleEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   startTime: Date;
 
-  @Field()
+  @Field(() => Date)
   endTime: Date;
 
   @Field(() => WeekDays)
@@ -34,6 +34,6 @@ export class Schedule implements ScheduleEntity {
   @Field(() => Institution)
   institution: Institution;
 
-  @Field()
+  @Field(() => String)
   room: string;
 }

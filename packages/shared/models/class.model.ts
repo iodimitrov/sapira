@@ -14,10 +14,10 @@ export class Class implements ClassEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
   @Field(() => Institution)
@@ -35,13 +35,13 @@ export class Class implements ClassEntity {
   @Field(() => Teacher, { nullable: true })
   teacher?: Teacher | null;
 
-  @Field()
+  @Field(() => String)
   letter: string;
 
   @Field(() => Int)
   number: number;
 
-  @Field()
+  @Field(() => String)
   token: string;
 
   @Field(() => TokenStatus)

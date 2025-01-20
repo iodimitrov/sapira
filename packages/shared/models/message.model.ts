@@ -26,10 +26,10 @@ export class Message implements MessageEntity {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
   @Field(() => User)
@@ -44,7 +44,7 @@ export class Message implements MessageEntity {
   @Field(() => AssignmentType, { nullable: true })
   assignmentType?: AssignmentType | null;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   data?: string | null;
 
   @Field(() => [File], { nullable: true })
@@ -59,6 +59,6 @@ export class Message implements MessageEntity {
   @Field(() => Subject, { nullable: true })
   subject?: Subject | null;
 
-  @Field({ nullable: true })
+  @Field(() => Date, { nullable: true })
   assignmentDueDate?: Date | null;
 }
