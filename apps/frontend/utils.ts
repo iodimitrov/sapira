@@ -199,3 +199,26 @@ export const getGradeType = (type: string): string | undefined => {
       return undefined;
   }
 };
+
+export const getDayByWord = (
+  dayAsWord: string | undefined,
+): number | undefined => {
+  switch (dayAsWord?.toUpperCase()) {
+    case 'SUNDAY':
+      return 7;
+    case 'MONDAY':
+      return 1;
+    case 'TUESDAY':
+      return 2;
+    case 'WEDNESDAY':
+      return 3;
+    case 'THURSDAY':
+      return 4;
+    case 'FRIDAY':
+      return 5;
+    case 'SATURDAY':
+      return 6;
+    default:
+      return undefined;
+  }
+};

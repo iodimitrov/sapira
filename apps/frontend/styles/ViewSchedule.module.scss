@@ -1,0 +1,29 @@
+@import 'variables';
+
+.content {
+  margin: {
+    top: 0.9rem;
+    right: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .calendar-container {
+    padding: 1.5rem;
+    box-shadow: $card-shadow;
+    background-color: white;
+    border-radius: 0.6rem;
+    height: 50rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 1.25rem;
+    margin: {
+      top: 1.5rem;
+      right: 0;
+    }
+    flex-direction: column-reverse;
+  }
+}
