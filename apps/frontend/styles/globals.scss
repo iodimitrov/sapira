@@ -30,12 +30,14 @@ body {
 
 #__next {
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
   flex-direction: row;
 
   & > * {
     padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    height: 100%;
   }
 }
 
