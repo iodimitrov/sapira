@@ -25,6 +25,6 @@ export class AddMessageInput {
   @Field({ nullable: true })
   subjectId?: string;
 
-  @Field({ nullable: true })
+  @Field(() => Date, { nullable: true })
   assignmentDueDate?: Date;
 }

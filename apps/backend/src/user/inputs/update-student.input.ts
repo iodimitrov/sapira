@@ -6,7 +6,7 @@ export class UpdateStudentInput {
   @Field()
   id: string;
 
-  @Field({ nullable: true })
+  @Field(() => Date, { nullable: true })
   startDate?: Date;
 
   @Field({ nullable: true })

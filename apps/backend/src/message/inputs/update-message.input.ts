@@ -16,6 +16,6 @@ export class UpdateMessageInput {
   @Field(() => [GraphQLUpload], { nullable: true })
   files?: Promise<FileUpload>[];
 
-  @Field({ nullable: true })
+  @Field(() => Date, { nullable: true })
   assignmentDueDate?: Date;
 }

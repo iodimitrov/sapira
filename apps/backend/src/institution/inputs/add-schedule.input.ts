@@ -3,10 +3,10 @@ import { WeekDays } from '@sapira/database';
 
 @InputType()
 export class AddScheduleInput {
-  @Field()
+  @Field(() => Date)
   startTime: Date;
 
-  @Field()
+  @Field(() => Date)
   endTime: Date;
 
   @Field(() => WeekDays)
