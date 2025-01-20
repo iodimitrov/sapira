@@ -216,10 +216,10 @@ const Register = () => {
                 >
                   {(
                     [
-                      'elementary',
-                      'high',
-                      'primary',
-                      'united',
+                      'ELEMENTARY',
+                      'HIGH',
+                      'PRIMARY',
+                      'UNITED',
                     ] satisfies EducationStage[]
                   ).map((stage) => (
                     <MenuItem key={stage} value={stage}>
@@ -248,14 +248,14 @@ const Register = () => {
                 >
                   {(
                     [
-                      'art',
-                      'humanitarian',
-                      'linguistical',
-                      'mathematical',
-                      'natural_mathematical',
-                      'ou',
-                      'su',
-                      'technological',
+                      'ART',
+                      'HUMANITARIAN',
+                      'LINGUISTICAL',
+                      'MATHEMATICAL',
+                      'NATURAL_MATHEMATICAL',
+                      'OU',
+                      'SU',
+                      'TECHNOLOGICAL',
                     ] satisfies InstitutionType[]
                   ).map((type) => (
                     <MenuItem key={type} value={type}>
