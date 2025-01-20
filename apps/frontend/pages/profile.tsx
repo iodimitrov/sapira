@@ -88,7 +88,7 @@ const GradeTable = (props: GradeTableProps) => {
         }
       }
     `,
-    JSON.stringify({ subjectId: props.subjectId, classId: props.classId }),
+    { subjectId: props.subjectId, classId: props.classId },
   ]);
 
   const onGradeHover = (index: number, value: HTMLButtonElement | null) => {

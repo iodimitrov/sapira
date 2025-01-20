@@ -108,7 +108,7 @@ const Dashboard = () => {
           messageType
           status
           files {
-            filename
+            key
             publicUrl
           }
         }
@@ -156,7 +156,7 @@ const Dashboard = () => {
         }
       }
     `,
-    JSON.stringify({ filterByStatus, filterByType }),
+    { filterByStatus, filterByType },
   ]);
 
   useEffect(() => {
