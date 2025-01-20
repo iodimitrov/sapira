@@ -22,6 +22,7 @@ import { UpdateStudentRecordInput } from '../inputs/update-student-record.input'
 import { UserService } from './user.service';
 import { UpdateStudentInput } from '../inputs/update-student.input';
 import { TeacherService } from './teacher.service';
+import { R2Service } from '@sapira/nest-common';
 
 @Injectable()
 export class StudentService {
@@ -32,6 +33,7 @@ export class StudentService {
     private readonly userService: UserService,
     @Inject(forwardRef(() => TeacherService))
     private readonly teacherService: TeacherService,
+    private readonly r2Service: R2Service,
     @InjectRepository(StudentEntity)
     private readonly studentRepository: Repository<StudentEntity>,
   ) {}
@@ -79,7 +81,15 @@ export class StudentService {
       throw new NotFoundException(id);
     }
 
-    // TODO: get student dossier files
+    if (student.dossier) {
+      for (const dossier of student.dossier) {
+        if (!dossier.files) continue;
+
+        for (const file of dossier.files) {
+          file.publicUrl = await this.r2Service.getSignedUrl({ key: file.key });
+        }
+      }
+    }
 
     return student;
   }
