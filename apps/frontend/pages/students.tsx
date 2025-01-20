@@ -128,7 +128,7 @@ const UsersComponent = (props: UsersProps) => {
             <strong>Имейл: </strong>
             {props.email || '--'}
           </Typography>
-          {props.role === 'STUDENT' && (
+          {props.role?.toLowerCase() === 'student' && (
             <>
               <Typography className={styles['class']}>
                 <strong>Клас: </strong>
