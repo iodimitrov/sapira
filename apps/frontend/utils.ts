@@ -222,3 +222,7 @@ export const getDayByWord = (
       return undefined;
   }
 };
+
+export function extractFileNameFromR2Key(r2Key: string): string {
+  return r2Key.split('/').pop() || '';
+}

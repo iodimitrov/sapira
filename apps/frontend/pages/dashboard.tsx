@@ -50,6 +50,7 @@ import {
   getMessageType,
   getMessageStatus,
   getAssignmentType,
+  extractFileNameFromR2Key,
 } from '~/utils';
 import Alert from '@material-ui/lab/Alert';
 
@@ -568,7 +569,7 @@ const Dashboard = () => {
                                 href={file.publicUrl || '#'}
                                 target="_blank"
                               >
-                                {`${file.key}`}
+                                {extractFileNameFromR2Key(file.key)}
                               </Link>
                               <br />
                             </Fragment>

@@ -40,7 +40,7 @@ import { format } from 'date-fns';
 // eslint-disable-next-line import/no-duplicates
 import { bg } from 'date-fns/locale';
 import gqlClient from '../client';
-import { getUserRole } from '../utils';
+import { extractFileNameFromR2Key, getUserRole } from '../utils';
 import type {
   File as FileEntity,
   StudentDossier,
@@ -82,7 +82,7 @@ const StudentsComponent = (props: DossierProps) => {
           {props.files?.map((file, i: number) => (
             <Fragment key={i}>
               <Link href={file.publicUrl || '#'} target="_blank">
-                {`${file.key}`}
+                {extractFileNameFromR2Key(file.key)}
               </Link>
               <br />
             </Fragment>
