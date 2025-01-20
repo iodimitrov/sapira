@@ -50,6 +50,7 @@ import { MessageModule } from './message/message.module';
       driver: ApolloDriver,
       installSubscriptionHandlers: true,
       autoSchemaFile: true,
+      csrfPrevention: false,
       context: ({ req, res }) => ({ req, res }),
     }),
     BaseAuthModule,
