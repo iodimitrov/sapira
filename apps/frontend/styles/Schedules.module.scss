@@ -1,0 +1,163 @@
+@import 'variables';
+
+.card {
+  position: relative;
+  border: 1px solid $dark-color;
+  box-shadow: $card-shadow;
+  width: 20.6rem;
+  width: calc(100% / 5 - 15px);
+  min-height: 5.6rem;
+  border-radius: 0.6rem;
+  margin: 0 0.9rem 0.9rem 0;
+  transition: 0.2s;
+  cursor: pointer;
+
+  .viewschedule-link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  .card-header {
+    :global .MuiCardHeader-avatar {
+      .MuiAvatar-root {
+        transition: 0.2s;
+        background-color: $dark-color;
+      }
+    }
+
+    :global .MuiCardHeader-content {
+      overflow: hidden;
+
+      .MuiCardHeader-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 600;
+      }
+
+      .MuiCardHeader-subheader {
+        transition: 0.2s;
+      }
+    }
+
+    :global .MuiCardHeader-action {
+      button {
+        z-index: 1;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $dark-color;
+    color: white;
+
+    .card-header {
+      :global .MuiCardHeader-avatar {
+        .MuiAvatar-root {
+          background-color: white;
+          color: $dark-color;
+        }
+      }
+
+      :global .MuiCardHeader-action {
+        button {
+          color: white;
+        }
+      }
+
+      :global .MuiCardHeader-content {
+        .MuiCardHeader-subheader {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin: {
+    top: 0.9rem;
+    right: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .actions-container {
+    margin-bottom: 0.6rem;
+
+    .schedule-add {
+      margin: 0 0.3rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      button {
+        box-shadow: $button-shadow;
+      }
+    }
+  }
+
+  .schedules-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &.parent {
+      margin-top: 1.6rem;
+    }
+
+    .no-classes {
+      width: 100%;
+      padding: 1.6rem;
+      box-shadow: $card-shadow;
+      background-color: white;
+      border-radius: 0.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .content {
+    padding: 1.25rem;
+    margin: {
+      top: 1.6rem;
+      right: 0;
+    }
+    flex-direction: column-reverse;
+
+    .actions-container {
+      margin-bottom: 0.6rem;
+
+      .subject-add {
+        margin: 0 0.3rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        button {
+          box-shadow: $button-shadow;
+        }
+      }
+    }
+  }
+}
