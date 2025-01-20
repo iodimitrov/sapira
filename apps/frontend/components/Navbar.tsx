@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 import Link from './Link';
-import styles from 'styles/Navbar.module.scss';
+import styles from '~/styles/Navbar.module.scss';
 import Loader from 'components/Loader';
 import { useAuth } from '../hooks/useAuth';
 

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { CircularProgress, Container } from '@material-ui/core';
-import styles from 'styles/Loader.module.scss';
+import styles from '~/styles/Loader.module.scss';
 
 const Loader: FunctionComponent = () => {
   return (
