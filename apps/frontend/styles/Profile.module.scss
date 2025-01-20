@@ -1,0 +1,120 @@
+@import 'variables';
+
+.content {
+  background-color: white;
+  padding: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 0.9rem;
+  box-shadow: $card-shadow;
+  border-radius: 0.6rem;
+
+  .grades-container {
+    margin-top: 0.9rem;
+    margin-left: 0.4rem;
+    display: flex;
+    flex-direction: column;
+
+    .grade-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 2.2rem;
+
+      .grade-field {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        font-size: 1rem;
+
+        .grade {
+          cursor: default;
+          padding: 0.3rem;
+          margin-right: 0.9rem;
+        }
+
+        &.grade-field-turm-1 {
+          min-width: 6.9rem;
+        }
+
+        &.grade-field-turm-2 {
+          min-width: 6.9rem;
+        }
+
+        &.grade-field-year {
+          min-width: 6.9rem;
+          margin-right: 1.25rem;
+        }
+
+        &.grade-field-grades {
+          min-width: 100%;
+        }
+
+        &.grade-field-grades {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+
+    .avatar {
+      width: 12.5rem;
+      height: 12.5rem;
+    }
+
+    .profile-info {
+      margin-left: 3.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .info {
+        .details {
+          .additional-info {
+            margin-top: 0.3rem;
+
+            .additional-text {
+              display: flex;
+
+              svg {
+                margin-right: 0.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .additional-info {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      margin-top: 1.25rem;
+    }
+
+    .edit-button {
+      align-self: flex-start;
+    }
+
+    .actions-container {
+      & > *:not(:first-child) {
+        margin-left: 0.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .content {
+    margin-right: 0;
+    box-shadow: none;
+    padding: 1.5rem 0.6rem;
+  }
+}

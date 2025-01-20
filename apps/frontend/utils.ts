@@ -4,6 +4,8 @@ import type {
   InstitutionType,
   MessageStatus,
   MessageType,
+  UserRole,
+  UserStatus,
 } from '@sapira/database';
 
 export const getInstitutionType = (
@@ -86,6 +88,67 @@ export const getAssignmentType = (
       return 'Работа в клас';
     case 'EXAM':
       return 'Контролно';
+    default:
+      return undefined;
+  }
+};
+
+export const getUserStatus = (
+  status: UserStatus | string | undefined,
+): string | undefined => {
+  switch (status) {
+    case 'UNVERIFIED':
+      return 'Непотвърден';
+    case 'ACTIVE':
+      return 'Активен';
+    case 'INACTIVE':
+      return 'Неактивен';
+    case 'BLOCKED':
+      return 'Блокиран';
+    default:
+      return undefined;
+  }
+};
+
+export const getUserRole = (
+  role: UserRole | string | undefined,
+): string | undefined => {
+  switch (role) {
+    case 'ADMIN':
+      return 'Админ';
+    case 'PARENT':
+      return 'Родител';
+    case 'STUDENT':
+      return 'Ученик';
+    case 'TEACHER':
+      return 'Учител';
+    case 'VIEWER':
+      return 'Посетител';
+    default:
+      return undefined;
+  }
+};
+
+export const getGradeName = (
+  name: string | number | undefined,
+  short = false,
+): string | undefined => {
+  switch (name) {
+    case 'BAD':
+    case 2:
+      return short ? 'сл.' : 'слаб';
+    case 'AVERAGE':
+    case 3:
+      return short ? 'ср.' : 'среден';
+    case 'GOOD':
+    case 4:
+      return short ? 'доб.' : 'добър';
+    case 'VERY_GOOD':
+    case 5:
+      return short ? 'мн. доб.' : 'мн. добър';
+    case 'EXCELLENT':
+    case 6:
+      return short ? 'отл.' : 'отличен';
     default:
       return undefined;
   }
