@@ -1,5 +1,6 @@
 import type {
   AssignmentType,
+  ContractType,
   EducationStage,
   InstitutionType,
   MessageStatus,
@@ -149,6 +150,19 @@ export const getGradeName = (
     case 'EXCELLENT':
     case 6:
       return short ? 'отл.' : 'отличен';
+    default:
+      return undefined;
+  }
+};
+
+export const getContractType = (
+  type: ContractType | string | undefined,
+): string | undefined => {
+  switch (type) {
+    case 'PART_TIME':
+      return 'Хоноруван';
+    case 'FULL_TIME':
+      return 'На договор';
     default:
       return undefined;
   }

@@ -15,3 +15,5 @@ export type MessageType = 'ASSIGNMENT' | 'MESSAGE';
 export type MessageStatus = 'CREATED' | 'PUBLISHED';
 
 export type AssignmentType = 'HOMEWORK' | 'CLASSWORK' | 'EXAM';
+
+export type UserRole = 'ADMIN' | 'PARENT' | 'STUDENT' | 'TEACHER' | 'VIEWER';

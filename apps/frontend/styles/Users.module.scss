@@ -1,0 +1,196 @@
+@import 'variables';
+
+.content {
+  margin: {
+    top: 0.9rem;
+    right: 1.6rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .actions-container {
+    margin-bottom: 0.6rem;
+
+    .generate-button {
+      margin: 0 0.3rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .confirm {
+      box-shadow: $button-shadow;
+    }
+  }
+
+  .generatetoken-container {
+    padding: 1.6rem;
+    box-shadow: $card-shadow;
+    background-color: white;
+    border-radius: 0.6rem;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+
+    .input-container {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: row;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .role-select {
+        min-width: 7.5rem;
+      }
+
+      .class-select {
+        min-width: 7.5rem;
+      }
+
+      & > * {
+        &:first-child {
+          margin-left: 0;
+        }
+
+        margin-left: 1.25rem;
+      }
+    }
+  }
+
+  .users-container {
+    margin-top: 1.6rem;
+
+    .user-accordion {
+      margin-bottom: 1.25rem;
+      box-shadow: $card-shadow;
+      border-radius: 0.6rem;
+      padding: 0.6rem;
+
+      .accordion-summary {
+        :global(.MuiAccordionSummary-content) {
+          & > * {
+            &:first-child {
+              margin-left: 0;
+            }
+            width: 100%;
+            margin-left: 1.25rem;
+          }
+        }
+      }
+
+      .accordion-details {
+        display: flex;
+        flex-direction: column;
+
+        .details {
+          display: flex;
+          flex-direction: row;
+          margin-right: 2.2rem;
+
+          & > * {
+            &:first-child {
+              margin-left: 0;
+            }
+            width: 100%;
+            margin-left: 1.25rem;
+            word-break: break-word;
+          }
+        }
+
+        .button-view-more {
+          margin-top: 0.6rem;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .content {
+    padding: 1.25rem;
+    margin: {
+      top: 1.6rem;
+      right: 0;
+    }
+    flex-direction: column-reverse;
+
+    .actions-container {
+      margin: {
+        bottom: 0;
+        top: 0.6rem;
+      }
+    }
+
+    .generatetoken-container {
+      .input-container {
+        flex-direction: column;
+
+        .role-select {
+          width: 100%;
+        }
+
+        .class-select {
+          width: 100%;
+        }
+
+        & > * {
+          &:first-child {
+            margin-top: 0;
+          }
+
+          margin-top: 1.25rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .content {
+    .users-container {
+      .user-accordion {
+        .accordion-summary {
+          :global(.MuiAccordionSummary-content) {
+            flex-direction: column;
+            & > * {
+              &:first-child {
+                margin-top: 0;
+              }
+
+              margin-left: 0;
+              margin-top: 0.6rem;
+            }
+          }
+        }
+
+        .accordion-details {
+          .details {
+            flex-direction: column;
+
+            & > * {
+              &:first-child {
+                margin-top: 0;
+              }
+
+              margin-left: 0;
+              margin-top: 0.6rem;
+            }
+          }
+
+          .button-view-more {
+            align-self: auto;
+          }
+        }
+      }
+    }
+  }
+}
