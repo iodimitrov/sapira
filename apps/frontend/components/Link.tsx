@@ -38,7 +38,8 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       component={NextLink}
       className={className}
       ref={ref}
-      href={href.toString()}
+      // @ts-expect-error href is not a valid prop for MuiLink, but it is injected by NextLink
+      href={href}
       {...other}
     />
   );
