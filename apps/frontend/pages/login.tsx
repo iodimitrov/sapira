@@ -49,9 +49,9 @@ const Login = () => {
       );
       router.push('/dashboard');
     } catch ({ response }: any) {
-      if (response.errors[0].message.includes('User not found')) {
+      if (response.errors?.[0].message.includes('User not found')) {
         setError('Невалиден имейл');
-      } else if (response.errors[0].message.includes('Invalid password')) {
+      } else if (response.errors?.[0].message.includes('Invalid password')) {
         setError('Невалиден парола');
       }
     }

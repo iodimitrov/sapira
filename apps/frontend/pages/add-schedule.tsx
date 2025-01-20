@@ -381,7 +381,7 @@ const AddSchedule = () => {
       }
       router.push('/schedules');
     } catch ({ response }: any) {
-      if (response.errors[0].message.includes('This Class already exists')) {
+      if (response.errors?.[0].message.includes('This Class already exists')) {
         setError('Има предмет вече на това място');
       }
       setError('Неизвестна грешка');
