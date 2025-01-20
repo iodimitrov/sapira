@@ -8,7 +8,6 @@ import {
   Subject as SubjectEntity,
   Schedule as ScheduleEntity,
 } from '@sapira/database';
-import { DateScalar } from '@sapira/nest-common';
 import { ClassService } from './services/class.service';
 import { UserModule } from '../user/user.module';
 import { ClassResolver } from './resolvers/class.resolver';
@@ -42,7 +41,6 @@ import { ScheduleResolver } from './resolvers/schedule.resolver';
     SubjectService,
     GradeService,
     ScheduleService,
-    DateScalar,
   ],
   exports: [
     InstitutionService,
