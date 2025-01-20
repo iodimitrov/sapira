@@ -264,7 +264,9 @@ export class MessageService {
       if (input.messageType && input.messageStatus) {
         messages = await this.messageRepository.find({
           where: {
-            fromUser: await this.userService.findOne(currUser.id),
+            fromUser: {
+              id: currUser.id,
+            },
             messageType: input.messageType,
             status: input.messageStatus,
           },
@@ -272,14 +274,18 @@ export class MessageService {
       } else if (!input.messageType) {
         messages = await this.messageRepository.find({
           where: {
-            fromUser: await this.userService.findOne(currUser.id),
+            fromUser: {
+              id: currUser.id,
+            },
             status: input.messageStatus,
           },
         });
       } else if (!input.messageStatus) {
         messages = await this.messageRepository.find({
           where: {
-            fromUser: await this.userService.findOne(currUser.id),
+            fromUser: {
+              id: currUser.id,
+            },
             messageType: input.messageType,
           },
         });
