@@ -90,5 +90,5 @@ export const useAuth = (): Auth => {
     })();
   }, []);
 
-  return { user: user[0], status: user[1], logout };
+  return { user: user.data, status: user.status, logout };
 };
