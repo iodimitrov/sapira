@@ -140,62 +140,64 @@ const Users = () => {
   const [token, setToken] = useState('');
   const [classId, setClassId] = useState('');
   const [error, setError] = useState('');
-  const { data } = useSWR(gql`
-    query {
-      getAllClasses {
-        id
-        number
-        letter
-      }
-
-      getAllStudents {
-        id
-        user {
-          firstName
-          middleName
-          lastName
-          email
-          status
-        }
-        class {
+  const { data } = useSWR([
+    gql`
+      query {
+        getAllClasses {
+          id
           number
           letter
         }
-        prevEducation
-        recordMessage
-        dossier {
+
+        getAllStudents {
           id
-          createdAt
-          updatedAt
-          fromUser {
-            id
+          user {
             firstName
             middleName
             lastName
+            email
+            status
           }
-          subject {
+          class {
+            number
+            letter
+          }
+          prevEducation
+          recordMessage
+          dossier {
             id
-            name
+            createdAt
+            updatedAt
+            fromUser {
+              id
+              firstName
+              middleName
+              lastName
+            }
+            subject {
+              id
+              name
+            }
+            message
           }
-          message
         }
-      }
 
-      getAllTeachers {
-        id
-        user {
-          firstName
-          middleName
-          lastName
-          email
-          status
+        getAllTeachers {
+          id
+          user {
+            firstName
+            middleName
+            lastName
+            email
+            status
+          }
+          education
+          yearsExperience
+          contractType
         }
-        education
-        yearsExperience
-        contractType
       }
-    }
-  `);
+    `,
+  ]);
 
   useEffect(() => {
     if (status === 'REDIRECT') {

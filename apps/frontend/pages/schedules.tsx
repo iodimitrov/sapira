@@ -122,7 +122,7 @@ const Schedule = () => {
 
   const [value, setValue] = useState(0);
   const [error, setError] = useState('');
-  const { data } = useSWR(
+  const { data } = useSWR([
     user?.role.toLowerCase() === 'parent'
       ? gql`
           query {
@@ -156,7 +156,7 @@ const Schedule = () => {
             }
           }
         `,
-  );
+  ]);
 
   useEffect(() => {
     if (status === 'REDIRECT') {

@@ -398,60 +398,62 @@ const Profile = () => {
   const [email, setEmail] = useState<string | undefined>('');
   const [error, setError] = useState('');
 
-  const { data } = useSWR(gql`
-    query {
-      getAllClasses {
-        id
-        number
-        letter
-        subjects {
-          id
-          name
-        }
-        teacher {
-          id
-          user {
-            id
-          }
-        }
-      }
-
-      getAllStudents {
-        id
-        user {
-          id
-          firstName
-          middleName
-          lastName
-          email
-          status
-        }
-        class {
+  const { data } = useSWR([
+    gql`
+      query {
+        getAllClasses {
           id
           number
           letter
+          subjects {
+            id
+            name
+          }
+          teacher {
+            id
+            user {
+              id
+            }
+          }
         }
-        prevEducation
-        recordMessage
-        dossier {
+
+        getAllStudents {
           id
-          createdAt
-          updatedAt
-          fromUser {
+          user {
             id
             firstName
             middleName
             lastName
+            email
+            status
           }
-          subject {
+          class {
             id
-            name
+            number
+            letter
           }
-          message
+          prevEducation
+          recordMessage
+          dossier {
+            id
+            createdAt
+            updatedAt
+            fromUser {
+              id
+              firstName
+              middleName
+              lastName
+            }
+            subject {
+              id
+              name
+            }
+            message
+          }
         }
       }
-    }
-  `);
+    `,
+  ]);
 
   useEffect(() => {
     if (status === 'REDIRECT') {
