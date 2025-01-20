@@ -17,3 +17,5 @@ export type MessageStatus = 'CREATED' | 'PUBLISHED';
 export type AssignmentType = 'HOMEWORK' | 'CLASSWORK' | 'EXAM';
 
 export type UserRole = 'ADMIN' | 'PARENT' | 'STUDENT' | 'TEACHER' | 'VIEWER';
+
+export type GradeType = 'YEAR' | 'TURM_1' | 'TURM_2' | 'ONGOING';

@@ -167,3 +167,35 @@ export const getContractType = (
       return undefined;
   }
 };
+
+export const getGradeEnum = (grade: number): string | undefined => {
+  switch (grade) {
+    case 2:
+      return 'BAD';
+    case 3:
+      return 'AVERAGE';
+    case 4:
+      return 'GOOD';
+    case 5:
+      return 'VERY_GOOD';
+    case 6:
+      return 'EXCELLENT';
+    default:
+      return undefined;
+  }
+};
+
+export const getGradeType = (type: string): string | undefined => {
+  switch (type) {
+    case 'TURM_1':
+      return '1 срок';
+    case 'TURM_2':
+      return '2 срок';
+    case 'ONGOING':
+      return 'Текуща';
+    case 'YEAR':
+      return 'Годишна';
+    default:
+      return undefined;
+  }
+};
