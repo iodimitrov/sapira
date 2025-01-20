@@ -20,7 +20,7 @@
     "@sapira/shared": "workspace:*",
     "clsx": "^2.1.1",
     "date-fns": "^2.30.0",
-    "graphql-request": "^7.1.2",
+    "graphql-request": "^5.2.0",
     "lodash": "^4.17.21",
     "material-ui-dropzone": "^3.5.0",
     "next": "14.2.23",
