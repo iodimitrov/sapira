@@ -49,6 +49,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       driver: ApolloDriver,
       installSubscriptionHandlers: true,
       autoSchemaFile: true,
+      context: ({ req, res }) => ({ req, res }),
     }),
     BaseAuthModule,
     InstitutionModule,
