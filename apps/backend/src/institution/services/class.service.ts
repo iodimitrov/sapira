@@ -153,6 +153,12 @@ export class ClassService {
       ];
     } else if (user.role === UserRole.ADMIN) {
       return this.classRepository.find({
+        join: {
+          alias: 'subject',
+          leftJoinAndSelect: {
+            subjects: 'subject.subjects',
+          },
+        },
         where: {
           institution: {
             id: user.institution.id,
