@@ -1,0 +1,177 @@
+@import 'variables';
+
+.content {
+  margin: {
+    top: 0.9rem;
+    right: 1.5rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .actions-container {
+    margin-bottom: 0.6rem;
+
+    .button-link {
+      margin: 0 0.3rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .confirm {
+      box-shadow: $button-shadow;
+    }
+  }
+
+  .edit-schedule-container {
+    padding: 1.5rem;
+    box-shadow: $card-shadow;
+    background-color: white;
+    border-radius: 0.6rem;
+
+    .input-container {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .remove-subject:not(:disabled) {
+        border: 1px solid rgba(#d32f2f, 0.56);
+        color: #d32f2f;
+
+        &:hover {
+          background-color: #d32f2f;
+          color: white;
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .class-select {
+        min-width: 11.25rem;
+      }
+
+      .day-select {
+        min-width: 12.5rem;
+      }
+
+      .time-container {
+        display: flex;
+        flex-direction: row;
+
+        .time {
+          width: 11.25rem;
+          min-width: 11.25rem;
+
+          &:first-child {
+            margin-right: 0.3rem;
+          }
+
+          &:last-child {
+            margin-left: 0.3rem;
+          }
+        }
+      }
+
+      .subject-select {
+        min-width: 13.75rem;
+        max-width: 16.25rem;
+      }
+
+      .teachers-select {
+        min-width: 11.25rem;
+        max-width: 16.25rem;
+      }
+
+      & > * {
+        &:first-child {
+          margin-left: 0;
+        }
+
+        margin-left: 1.25rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 1.25rem;
+    margin: {
+      top: 1.5rem;
+      right: 0;
+    }
+    flex-direction: column-reverse;
+
+    .actions-container {
+      margin: {
+        bottom: 0;
+        top: 0.6rem;
+      }
+    }
+
+    .edit-schedule-container {
+      .input-container {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 3.75rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .class-select,
+        .day-select,
+        .subject-select,
+        .teachers-select {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .time-container {
+          .time {
+            width: 100%;
+          }
+        }
+
+        & > * {
+          &:first-child {
+            margin-top: 0;
+          }
+
+          margin-top: 1.25rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    .edit-schedule-container {
+      .input-container {
+        .time-container {
+          flex-direction: column;
+
+          .time {
+            &:first-child {
+              margin-right: 0;
+            }
+
+            &:last-child {
+              margin-top: 0.9rem;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
