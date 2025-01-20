@@ -11,6 +11,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { MessageModule } from './message/message.module';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
     BaseAuthModule,
     InstitutionModule,
     UserModule,
+    MessageModule,
   ],
   controllers: [AppController],
   providers: [AppService],
