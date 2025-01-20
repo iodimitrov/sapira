@@ -158,8 +158,6 @@ const Schedule = () => {
         `,
   );
 
-  console.log(data);
-
   useEffect(() => {
     if (status === 'REDIRECT') {
       router.push('/login');
