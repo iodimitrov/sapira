@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import cookieParser from 'cookie-parser';
 import { ConfigService } from '@nestjs/config';
 import helmet from 'helmet';
+import { graphqlUploadExpress } from 'graphql-upload-minimal';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -44,6 +45,8 @@ async function bootstrap() {
 
   const cookieSecret = configService.getOrThrow<string>('COOKIE_SECRET');
   app.use(cookieParser([cookieSecret]));
+
+  app.use(graphqlUploadExpress());
 
   await app.listen(3001);
 }
