@@ -43,7 +43,7 @@ const Register = () => {
   const [educationalStage, setEducationalStage] = useState('');
   const [activeStep, setActiveStep] = useState(0);
   const steps = [
-    'Регистрирай институция',
+    'Регистрирай училище',
     'Регистрирай администратор',
     'Завърши регистрацията',
   ];
@@ -273,7 +273,7 @@ const Register = () => {
                 className={styles.submit}
                 type="submit"
               >
-                Създай институция
+                Създай училище
               </Button>
             </div>
           </form>
@@ -357,7 +357,7 @@ const Register = () => {
         {activeStep === 2 && (
           <div className={styles.form}>
             <div className={styles['input-container']}>
-              <span className={styles['sub-title']}>Превю на институцията</span>
+              <span className={styles['sub-title']}>Превю на училището</span>
             </div>
             <div className={styles['input-container']}>
               <TextField

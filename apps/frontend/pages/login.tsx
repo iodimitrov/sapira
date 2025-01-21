@@ -122,7 +122,7 @@ const Login = () => {
           </div>
         </form>
         <div className={styles['register']}>
-          <span>Нямате институция? </span>
+          <span>Нямате училище? </span>
           <Link href="/register-institution">Регистрирайте</Link>
         </div>
         <Snackbar
