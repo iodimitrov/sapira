@@ -421,12 +421,12 @@ const AddSchedule = () => {
   return (
     <>
       <Head>
-        <title>Добави програма &#8226; Sapira</title>
+        <title>Добави разписание &#8226; Sapira</title>
       </Head>
       <Drawer />
       <ScheduleContext.Provider value={{ updateSubject }}>
         <Container className="main-container" maxWidth={false} disableGutters>
-          <Navbar title="Добави програма" />
+          <Navbar title="Добави разписание" />
           <div className={styles.content}>
             <div className={styles['actions-container']}>
               <Button

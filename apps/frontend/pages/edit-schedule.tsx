@@ -470,12 +470,12 @@ const EditSchedule = () => {
   return (
     <>
       <Head>
-        <title>Редактирай програма &#8226; Sapira</title>
+        <title>Редактирай разписание &#8226; Sapira</title>
       </Head>
       <Drawer />
       <ScheduleContext.Provider value={{ updateSubject }}>
         <Container className="main-container" maxWidth={false} disableGutters>
-          <Navbar title="Редактирай програма" />
+          <Navbar title="Редактирай разписание" />
           <div className={styles.content}>
             <div className={styles['actions-container']}>
               <Button

@@ -84,11 +84,11 @@ const ScheduleCard = (props: ScheduleCardProps) => {
             ></Link>
           </>
         }
-        title={props.title || `Програма на ${props.number}${props.letter}`}
+        title={props.title || `Разписание на ${props.number}${props.letter}`}
         subheader={
           props.startYear && props.endYear
             ? `${props.startYear} - ${props.endYear}`
-            : 'Седмична'
+            : 'Седмично'
         }
       />
       {props.role?.toLowerCase() === 'admin' && (
@@ -180,11 +180,11 @@ const Schedule = () => {
   return (
     <>
       <Head>
-        <title>Учебни програми &#8226; Sapira</title>
+        <title>Учебни разписания &#8226; Sapira</title>
       </Head>
       <Drawer />
       <Container className="main-container" maxWidth={false} disableGutters>
-        <Navbar title="Учебни програми" />
+        <Navbar title="Учебни разписания" />
         <div className={styles.content}>
           <div className={styles['actions-container']}>
             {user.role.toLowerCase() === 'admin' && (
@@ -199,7 +199,7 @@ const Schedule = () => {
                   color="primary"
                   endIcon={<AddOutlined />}
                 >
-                  Добави програма
+                  Добави разписание
                 </Button>
               </Link>
             )}
@@ -211,7 +211,7 @@ const Schedule = () => {
                   id={user.id}
                   teacherSchedule
                   role={user.role}
-                  title="Моята програма"
+                  title="Моето разписание"
                 />
               )}
               <>
@@ -227,8 +227,8 @@ const Schedule = () => {
                 {data && !data.getAllClasses && (
                   <div className={styles['no-classes']}>
                     <Typography color="textSecondary">
-                      Няма съществуващи програми. За да добавите такива,
-                      натиснете бутона &quot;Добави програма&quot;.
+                      Няма съществуващи разписания. За да добавите такива,
+                      натиснете бутона &quot;Добави разписание&quot;.
                     </Typography>
                   </div>
                 )}

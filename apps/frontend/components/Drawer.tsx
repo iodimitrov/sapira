@@ -115,8 +115,8 @@ const Drawer = () => {
             <Button>
               <DescriptionOutlined />
               {user?.role.toLowerCase() === 'student'
-                ? 'Учебна програма'
-                : 'Учебни програми'}
+                ? 'Учебно разписание'
+                : 'Учебни разписания'}
             </Button>
           </Link>
           {user?.role.toLowerCase() === 'parent' && (

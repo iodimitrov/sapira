@@ -69,11 +69,11 @@ const ViewSchedule = () => {
   return (
     <>
       <Head>
-        <title>Учебна програма &#8226; Sapira</title>
+        <title>Учебно разписание &#8226; Sapira</title>
       </Head>
       <Drawer />
       <Container className="main-container" maxWidth={false} disableGutters>
-        <Navbar title="Учебна програма" />
+        <Navbar title="Учебно разписание" />
         <div className={styles.content}>
           <div className={styles['calendar-container']}>
             {data && (
